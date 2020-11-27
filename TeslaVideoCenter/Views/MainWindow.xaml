@@ -2,7 +2,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:vm="clr-namespace:TeslaVideoCenter.ViewModels;assembly=TeslaVideoCenter"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="TeslaVideoCenter.Views.MainWindow" Icon="/Assets/avalonia-logo.ico" Title="TeslaVideoCenter">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+     xmlns:v="using:LibVLCSharp.Avalonia"
+     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="TeslaVideoCenter.Views.MainWindow" Icon="/Assets/avalonia-logo.ico" Title="TeslaVideoCenter">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -39,6 +41,15 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+
+
+            <v:VideoView Grid.Column="1" x:Name="VideoView">
+    <StackPanel Orientation="Horizontal" x:Name="test" Spacing="5" VerticalAlignment="Bottom">
+      <Button Content="PLAY" Height="25" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PlayButton_Click" />
+      <Button Content="STOP" Height="25" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="StopButton_Click" />
+      <Button Content="Pause" Height="25" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PauseButton_Click" />
+    </StackPanel>
+  </v:VideoView>
         </Grid>
     </Grid>
 </Window>
