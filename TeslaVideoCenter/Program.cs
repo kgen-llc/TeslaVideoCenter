@@ -2,6 +2,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
+using Microsoft.Extensions.Logging;
 
 namespace TeslaVideoCenter
 {
@@ -17,7 +18,6 @@ namespace TeslaVideoCenter
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .LogToDebug()
                 .UseReactiveUI();
     }
 }

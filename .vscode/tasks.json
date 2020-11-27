@@ -18,10 +18,10 @@
             "type": "process",
             "args": [
                 "run",
-                "${workspaceFolder}/TeslaVideoCenter/TeslaVideoCenter.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ]
+                "-p",
+                "${workspaceFolder}/TeslaVideoCenter",
+            ],
+            "problemMatcher": "$msCompile"
         },
         {
             "label": "publish",
