@@ -32,7 +32,7 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0" Items="{Binding CurrentEvent.Videos}">
+            <ListBox Grid.Column="0" Items="{Binding CurrentEvent.Videos}" SelectedItem="{Binding CurrentVideo}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border>

@@ -4,6 +4,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using LibVLCSharp.Avalonia;
 using LibVLCSharp.Shared;
+using TeslaVideoCenter.ViewModels;
 
 namespace TeslaVideoCenter.Views
 {
@@ -42,10 +43,10 @@ namespace TeslaVideoCenter.Views
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!VideoView.MediaPlayer.IsPlaying)
+            var video = ((MainWindowViewModel)this.DataContext).CurrentVideo;
+            if (!VideoView.MediaPlayer.IsPlaying && video != null)
             {
-                VideoView.MediaPlayer.Play(new Media(_libVLC,
-                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", FromType.FromLocation));
+                VideoView.MediaPlayer.Play(new Media(_libVLC,video.FilePath, FromType.FromPath));
             }
         }
 

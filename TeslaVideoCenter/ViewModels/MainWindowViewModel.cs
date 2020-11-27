@@ -10,6 +10,9 @@ namespace TeslaVideoCenter.ViewModels
     {
         private readonly EventsRepository repository;
         private Event currentEvent;
+
+        private Video currentVideo;
+
         public MainWindowViewModel()
         {
             this.repository = new EventsRepository("/Users/GeoVah/Documents/TeslaCam");
@@ -20,5 +23,6 @@ namespace TeslaVideoCenter.ViewModels
         public EventsViewModel EventsViewModel { get; }
 
         public Event CurrentEvent { get => this.currentEvent; set => this.RaiseAndSetIfChanged(ref this.currentEvent, value); }
+        public Video CurrentVideo { get => this.currentVideo; set => this.RaiseAndSetIfChanged(ref this.currentVideo, value); }
     }
 }
