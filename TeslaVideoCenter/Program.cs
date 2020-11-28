@@ -1,8 +1,5 @@
-﻿using System;
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
+﻿using Avalonia;
 using Avalonia.ReactiveUI;
-using Microsoft.Extensions.Logging;
 using LibVLCSharp.Avalonia;
 
 namespace TeslaVideoCenter
@@ -21,6 +18,6 @@ namespace TeslaVideoCenter
                 .UsePlatformDetect()
                 .UseReactiveUI()
                 .UseVLCSharp()
-                .LogToDebug();
+                .LogToTrace();
     }
 }

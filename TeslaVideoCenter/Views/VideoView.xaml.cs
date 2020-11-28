@@ -42,10 +42,10 @@ namespace TeslaVideoCenter.Views
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            var video = this.DataContext as string;
+            var video = this.DataContext as string[];
             if (!VlcVideoView.MediaPlayer.IsPlaying && video != null)
             {
-                VlcVideoView.MediaPlayer.Play(new Media(_libVLC,video, FromType.FromPath));
+                VlcVideoView.MediaPlayer.Play(new Media(_libVLC,video[0], FromType.FromPath));
             }
         }
 

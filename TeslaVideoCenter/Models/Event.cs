@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -17,12 +18,24 @@ namespace TeslaVideoCenter.Models
 
             var directory = Path.GetDirectoryName(eventJson);
 
+
             this.Videos = new ObservableCollectionExtended<Video>(
-                Directory
-                .GetFiles(directory, "*.mp4")
-                .Select(_ => new Video(_))
+                GetVideos(directory)
             );
 
+        }
+
+        private IEnumerable<Video> GetVideos(string folder) {
+          
+            return Directory
+                .GetFiles(folder, "*.mp4")
+                .GroupBy(getVideoName)
+                .Select(_ => new Video(_.Key, _));
+
+            string getVideoName(string filePath) {
+                var fileNameOnly = Path.GetFileNameWithoutExtension(filePath);
+                return fileNameOnly.Substring(fileNameOnly.LastIndexOf('-') + 1);
+            }
         }
         public string Reason { get;}
 
