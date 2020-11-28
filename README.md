@@ -5,4 +5,13 @@ This is :
 - and fun for me to play with AVALONIA.
 
 Currently tested on :
-- Mac x84 !
+- Mac x64 !
+
+# the LibVCLSharp.Avalonia is coming from ..
+https://github.com/donandren/vlcsharpavalonia
+
+# How to use it:
+Copy all your files from your USB drive to a TeslaCam folder within your document folder.
+For example on my Mac :
+
+![Tesla Cam in Finder](README.assets/finder.png)

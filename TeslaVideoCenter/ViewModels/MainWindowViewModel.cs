@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using ReactiveUI;
 using TeslaVideoCenter.Models;
@@ -15,7 +16,13 @@ namespace TeslaVideoCenter.ViewModels
 
         public MainWindowViewModel()
         {
-            this.repository = new EventsRepository("/Users/GeoVah/Documents/TeslaCam");
+            var document = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            
+            // on Mac, endure we have the documents folder
+            if(!document.EndsWith(Path.PathSeparator + "Documents")) {
+                document = Path.Combine(document, "Documents");
+            }
+            this.repository = new EventsRepository( Path.Combine( document, "TeslaCam"));
 
             this.EventsViewModel = new EventsViewModel(this.repository);
         }
