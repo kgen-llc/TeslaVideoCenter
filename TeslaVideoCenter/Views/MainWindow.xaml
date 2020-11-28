@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Column="0" Items="{Binding EventsViewModel.Events}" SelectedItem="{Binding CurrentEvent}">
+        <ListBox Grid.Column="0" Items="{Binding EventsViewModel.Events}" Name="Events">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -26,24 +26,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
-        <Grid Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0" Items="{Binding CurrentEvent.Videos}" SelectedItem="{Binding CurrentVideo}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border>
-                            <TextBlock Text="{Binding Name}"/>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-
-            <v:VideoView Grid.Column="1" DataContext="{Binding Path=CurrentVideo.FilePath}">
-            </v:VideoView>
-        </Grid>
+        <v:EventView Grid.Column="1"  DataContext="{Binding Path=SelectedItem,ElementName=Events}" />
+        
     </Grid>
 </Window>

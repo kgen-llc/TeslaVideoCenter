@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:v="clr-namespace:TeslaVideoCenter.Views;assembly=TeslaVideoCenter"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="TeslaVideoCenter.Views.EventView">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="250"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <ListBox Grid.Column="0" Items="{Binding Videos}" Name="Videos">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Border>
+            <TextBlock Text="{Binding Name}"/>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+   <v:VideoView Grid.Column="1" DataContext="{Binding Path=SelectedItem.FilePath, ElementName=Videos}">
+    </v:VideoView>
+  </Grid>
+</UserControl>
