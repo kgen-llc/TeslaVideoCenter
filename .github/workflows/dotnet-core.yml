@@ -28,7 +28,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Publish Windows
-      run: dotnet publish -p:Configuration=Release --runtime win10-x64
+      run: dotnet publish --runtime win10-x64 --configuration Release
     - name: Publish MacOS
-      run: dotnet publish -p:Configuration=Release --runtime osx-x64
+      run: dotnet publish --runtime osx-x64 --configuration Release
     
