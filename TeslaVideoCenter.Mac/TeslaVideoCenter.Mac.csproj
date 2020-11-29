@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;osx-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dotnet.Bundle" Version="*" />
+
+    <ProjectReference Include="..\TeslaVideoCenter.Common\TeslaVideoCenter.Common.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <CFBundleName>Tesla Video Center</CFBundleName> <!-- Also defines .app file name -->
+    <CFBundleDisplayName>Tesla Video Center</CFBundleDisplayName>
+    <CFBundleIdentifier>com.kgen.tesla-video-center</CFBundleIdentifier>
+    <CFBundleVersion>1.0.0</CFBundleVersion>
+    <CFBundleShortVersionString>1.0</CFBundleShortVersionString>
+    <CFBundlePackageType>AAPL</CFBundlePackageType>
+    <CFBundleSignature>????</CFBundleSignature>
+    <CFBundleExecutable>TeslaVideoCenter.Mac</CFBundleExecutable>
+    <CFBundleIconFile>TeslaVideoCenter.icns</CFBundleIconFile> <!-- Will be copied from output directory -->
+    <NSPrincipalClass>NSApplication</NSPrincipalClass>
+    <NSHighResolutionCapable>true</NSHighResolutionCapable>
+</PropertyGroup>
+</Project>
