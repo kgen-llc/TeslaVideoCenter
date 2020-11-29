@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <CFBundleName>TeslaVideoCenter</CFBundleName> <!-- Also defines .app file name -->
+    <CFBundleName>Tesla Video Center</CFBundleName> <!-- Also defines .app file name -->
     <CFBundleDisplayName>Tesla Video Center</CFBundleDisplayName>
     <CFBundleIdentifier>com.kgen.tesla-video-center</CFBundleIdentifier>
     <CFBundleVersion>1.0.0</CFBundleVersion>
