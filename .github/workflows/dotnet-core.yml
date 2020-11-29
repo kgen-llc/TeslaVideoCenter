@@ -35,4 +35,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: MacOS-App
-        path: 'bin/Release/netcoreapp3.1/osx-x64/publish/Tesla Video Center.app'
+        path: 'TeslaVideoCenter/bin/Release/netcoreapp3.1/osx-x64/publish/Tesla Video Center.app'
