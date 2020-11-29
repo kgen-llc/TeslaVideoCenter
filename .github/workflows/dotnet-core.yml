@@ -25,5 +25,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
+    - name: Publish Windows
+      run: dotnet publish --runtime win10-x64
+    - name: Publish MacOS
+      run: dotnet publish --runtime osx-x64
     - name: Test
       run: dotnet test --no-restore --verbosity normal
