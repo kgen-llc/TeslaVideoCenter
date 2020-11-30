@@ -10,11 +10,12 @@ namespace TeslaVideoCenter.Services
 
     public class HorizontalStack : IArgument
     {
-        public HorizontalStack(int numberOfVideos) {
+        public HorizontalStack(int numberOfVideos)
+        {
             this.NumberOfVideos = numberOfVideos;
         }
 
-        public int NumberOfVideos {get;}
+        public int NumberOfVideos { get; }
 
         public string Text => $" -filter_complex hstack=inputs={NumberOfVideos}";
     }
@@ -56,7 +57,7 @@ namespace TeslaVideoCenter.Services
                     ffmpeg = ffmpeg.AddFileInput(GetCombineVideoPath(video));
                 }
             }
-            
+
 
             await ffmpeg.OutputToFile(Path.Combine(@event.VideosDirectory, VideoManager.FullEventVideo), true,
             options => options.WithArgument(new HorizontalStack(@event.Videos.Count))
@@ -76,9 +77,10 @@ namespace TeslaVideoCenter.Services
         }
 
 
-        public static async Task Process(Event @event) {
+        public static async Task Process(Event @event)
+        {
             using var processing = new TransformVideo();
-            
+
             await processing.CreateOutput(@event);
         }
 
