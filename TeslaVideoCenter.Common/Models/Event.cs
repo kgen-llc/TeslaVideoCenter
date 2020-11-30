@@ -24,11 +24,7 @@ namespace TeslaVideoCenter.Models
                 GetVideos(this.VideosDirectory)
             );
 
-            var fullEvent = Path.Combine(this.VideosDirectory, VideoManager.FullEventVideo);
-
-            if(File.Exists(fullEvent)) {
-                this.Videos.Add(new Video("Full Event", fullEvent));
-            }
+           CheckForFullEvent();
 
         }
 
@@ -54,5 +50,13 @@ namespace TeslaVideoCenter.Models
         public DateTime Date {get;}
 
         public ObservableCollectionExtended<Video> Videos { get; }
+
+        public void CheckForFullEvent(){
+             var fullEvent = Path.Combine(this.VideosDirectory, VideoManager.FullEventVideo);
+
+            if(File.Exists(fullEvent)) {
+                this.Videos.Add(new Video("Full Event", fullEvent));
+            }
+        }
     }
 }

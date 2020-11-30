@@ -32,6 +32,7 @@ namespace TeslaVideoCenter.ViewModels
         private async Task GenerateOverallVideo()
         {
             await TransformVideo.Process(this.Event);
+            this.Event.CheckForFullEvent();
         }
     }
 
