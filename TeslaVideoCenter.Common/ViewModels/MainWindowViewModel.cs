@@ -19,7 +19,7 @@ namespace TeslaVideoCenter.ViewModels
             var document = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             
             // on Mac, endure we have the documents folder
-            if(!document.EndsWith(Path.PathSeparator + "Documents")) {
+            if(Path.GetFileName(document) != "Documents") {
                 document = Path.Combine(document, "Documents");
             }
             this.repository = new EventsRepository( Path.Combine( document, "TeslaCam"));
