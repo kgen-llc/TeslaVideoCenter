@@ -12,7 +12,7 @@
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/TeslaVideoCenter.Mac/bin/Debug/netcoreapp3.1/TeslaVideoCenter.Mac.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/TeslaVideoCenter.Mac",
+            "cwd": "${workspaceFolder}/TeslaVideoCenter.Mac/bin/Debug/netcoreapp3.1/",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
