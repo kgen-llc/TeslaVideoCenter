@@ -8,12 +8,15 @@ namespace TeslaVideoCenter.Models
 
         public Video(string name, IEnumerable<string> filePath) {
             this.FilePath = filePath.OrderBy(_ => _).ToArray();
+            this.RawName = name;
             this.Name = name + "- " + this.FilePath.Length + " parts";
         }
 
         public string[] FilePath {get;}
 
         public string Name { get;}
+
+        public string RawName { get;}
 
     }
 }

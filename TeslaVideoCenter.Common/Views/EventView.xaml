@@ -8,7 +8,12 @@
       <ColumnDefinition Width="250"/>
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
-    <ListBox Grid.Column="0" Items="{Binding Videos}" Name="Videos">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Button Grid.Column="0" Grid.Row="0">Generate Common Video</Button>
+    <ListBox Grid.Column="0" Grid.Row="1" Items="{Binding Event.Videos}" Name="Videos">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Border>
@@ -18,7 +23,7 @@
       </ListBox.ItemTemplate>
     </ListBox>
 
-   <v:VideoView Grid.Column="1" DataContext="{Binding Path=SelectedItem.FilePath, ElementName=Videos}">
+   <v:VideoView Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" DataContext="{Binding Path=SelectedItem.FilePath, ElementName=Videos}">
     </v:VideoView>
   </Grid>
 </UserControl>

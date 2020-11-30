@@ -20,8 +20,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="5" Text="{Binding Path=City}"/>
-                        <TextBlock Margin="5" Text="{Binding Path=Date}"/>
+                        <TextBlock Margin="5" Text="{Binding Path=Event.City}"/>
+                        <TextBlock Margin="5" Text="{Binding Path=Event.Date}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

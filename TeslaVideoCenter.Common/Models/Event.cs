@@ -16,11 +16,11 @@ namespace TeslaVideoCenter.Models
             this.City = document.RootElement.GetProperty("city").GetString();
             this.Date = document.RootElement.GetProperty("timestamp").GetDateTime();
 
-            var directory = Path.GetDirectoryName(eventJson);
+            this.VideosDirectory = Path.GetDirectoryName(eventJson);
 
 
             this.Videos = new ObservableCollectionExtended<Video>(
-                GetVideos(directory)
+                GetVideos(this.VideosDirectory)
             );
 
         }
@@ -37,6 +37,9 @@ namespace TeslaVideoCenter.Models
                 return fileNameOnly.Substring(fileNameOnly.LastIndexOf('-') + 1);
             }
         }
+
+        public string VideosDirectory { get;}
+
         public string Reason { get;}
 
         public string City {get;}
