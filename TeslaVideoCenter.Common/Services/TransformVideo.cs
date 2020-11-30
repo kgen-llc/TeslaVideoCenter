@@ -2,10 +2,22 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using FFMpegCore.Arguments;
 using TeslaVideoCenter.Models;
 
 namespace TeslaVideoCenter.Services
 {
+
+    public class HorizontalStack : IArgument
+    {
+        public HorizontalStack(int numberOfVideos) {
+            this.NumberOfVideos = numberOfVideos;
+        }
+
+        public int NumberOfVideos {get;}
+
+        public string Text => $" -filter_complex hstack=inputs={NumberOfVideos}";
+    }
     public class TransformVideo : IDisposable
     {
 
@@ -44,7 +56,11 @@ namespace TeslaVideoCenter.Services
                     ffmpeg = ffmpeg.AddFileInput(GetCombineVideoPath(video));
                 }
             }
-            await ffmpeg.OutputToFile(Path.Combine(@event.VideosDirectory, "fullEvent.mp4"), true)
+            
+
+            await ffmpeg.OutputToFile(Path.Combine(@event.VideosDirectory, "fullEvent.mp4"), true,
+            options => options.WithArgument(new HorizontalStack(@event.Videos.Count))
+            )
                      .ProcessAsynchronously();
         }
 
@@ -62,7 +78,7 @@ namespace TeslaVideoCenter.Services
 
         public static async Task Process(Event @event) {
             using var processing = new TransformVideo();
-
+            
             await processing.CreateOutput(@event);
         }
 

@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ReactiveUI;
 using TeslaVideoCenter.Models;
+using TeslaVideoCenter.Services;
 
 namespace TeslaVideoCenter.ViewModels
 {
@@ -10,15 +11,15 @@ namespace TeslaVideoCenter.ViewModels
         public EventViewModel(Event @event) {
             this.Event = @event;
 
-            this.GenerateOverallVideoCommand = ReactiveCommand.Create(GenerateOverallVideo);
+            this.GenerateOverallVideoCommand = ReactiveCommand.CreateFromTask(GenerateOverallVideo);
         }
 
         public Event Event {get;}
 
         public ICommand GenerateOverallVideoCommand {get;}
 
-        private Task GenerateOverallVideo() {
-            return Task.CompletedTask;
+        private async Task GenerateOverallVideo() {
+            await TransformVideo.Process(this.Event);
         }
     }
 
