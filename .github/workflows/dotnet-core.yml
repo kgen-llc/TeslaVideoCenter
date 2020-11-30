@@ -22,7 +22,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
-        - name: Publish Windows
+      - name: Publish Windows
         run: dotnet publish --runtime win10-x64 --configuration Release
    
   macos-bundle:
