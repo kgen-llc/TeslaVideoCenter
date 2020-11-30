@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.ReactiveUI;
+using FFMpegCore;
 using LibVLCSharp.Avalonia;
 
 namespace TeslaVideoCenter
@@ -18,6 +19,7 @@ namespace TeslaVideoCenter
                 .UsePlatformDetect()
                 .UseReactiveUI()
                 .UseVLCSharp()
+                .UseFFMpeg(new FFMpegOptions {RootDirectory ="." })
                 .LogToTrace();
     }
 }
