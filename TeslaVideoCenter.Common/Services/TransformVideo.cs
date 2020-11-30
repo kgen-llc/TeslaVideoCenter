@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,6 +19,45 @@ namespace TeslaVideoCenter.Services
         public int NumberOfVideos { get; }
 
         public string Text => $" -filter_complex hstack=inputs={NumberOfVideos}";
+    }
+
+    public class GridArragment : IArgument
+    {
+         public GridArragment(int numberOfVideos)
+        {
+            this.NumberOfVideos = numberOfVideos;
+            var numberOfColumns = Math.Ceiling(Math.Sqrt(this.NumberOfVideos));
+
+            var videoIndex = 0;
+            var rowIndex = 0;
+
+            var filters = new List<string>();
+
+            var verticalStack = string.Empty;
+
+            while(videoIndex < this.NumberOfVideos) {
+                var currentColumnIndex = 0;
+                var rowName = 'a' + rowIndex ++;
+                verticalStack += "[" + rowName +"]";
+                var horizontalStack = string.Empty;
+
+                while(currentColumnIndex < numberOfColumns && currentColumnIndex < this.NumberOfVideos) {
+                    horizontalStack += "[" + videoIndex  + "]"; 
+                    videoIndex++;
+                    currentColumnIndex++;
+                }
+                filters.Add(horizontalStack + "hstack[" + rowName + "]");
+            }
+
+            filters.Add(verticalStack + "vstack");
+
+            this.Text = "-filter_complex \"" + string.Join(';', filters) +"\"";
+
+        }
+
+        public int NumberOfVideos { get; }
+
+        public string Text {get;}
     }
     public class TransformVideo : IDisposable
     {
@@ -60,7 +100,7 @@ namespace TeslaVideoCenter.Services
 
 
             await ffmpeg.OutputToFile(Path.Combine(@event.VideosDirectory, VideoManager.FullEventVideo), true,
-            options => options.WithArgument(new HorizontalStack(@event.Videos.Count))
+            options => options.WithArgument(new GridArragment(@event.Videos.Count))
             )
                      .ProcessAsynchronously();
         }
