@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using DynamicData.Binding;
+using TeslaVideoCenter.Services;
 
 namespace TeslaVideoCenter.Models
 {
@@ -23,12 +24,18 @@ namespace TeslaVideoCenter.Models
                 GetVideos(this.VideosDirectory)
             );
 
+            var fullEvent = Path.Combine(this.VideosDirectory, VideoManager.FullEventVideo);
+
+            if(File.Exists(fullEvent)) {
+                this.Videos.Add(new Video("Full Event", fullEvent));
+            }
+
         }
 
         private IEnumerable<Video> GetVideos(string folder) {
           
             return Directory
-                .GetFiles(folder, "*.mp4")
+                .GetFiles(folder, "*-*.mp4")
                 .GroupBy(getVideoName)
                 .Select(_ => new Video(_.Key, _));
 

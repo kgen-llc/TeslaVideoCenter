@@ -58,7 +58,7 @@ namespace TeslaVideoCenter.Services
             }
             
 
-            await ffmpeg.OutputToFile(Path.Combine(@event.VideosDirectory, "fullEvent.mp4"), true,
+            await ffmpeg.OutputToFile(Path.Combine(@event.VideosDirectory, VideoManager.FullEventVideo), true,
             options => options.WithArgument(new HorizontalStack(@event.Videos.Count))
             )
                      .ProcessAsynchronously();

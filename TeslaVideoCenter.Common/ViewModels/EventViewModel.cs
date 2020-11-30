@@ -3,6 +3,9 @@ using System.Windows.Input;
 using ReactiveUI;
 using TeslaVideoCenter.Models;
 using TeslaVideoCenter.Services;
+using DynamicData;
+using DynamicData.Binding;
+using System;
 
 namespace TeslaVideoCenter.ViewModels
 {
@@ -11,7 +14,8 @@ namespace TeslaVideoCenter.ViewModels
         public EventViewModel(Event @event) {
             this.Event = @event;
 
-            this.GenerateOverallVideoCommand = ReactiveCommand.CreateFromTask(GenerateOverallVideo);
+            this.GenerateOverallVideoCommand = ReactiveCommand.CreateFromTask(GenerateOverallVideo,new MonitorNewProcessedVideo(@event));
+            
         }
 
         public Event Event {get;}
