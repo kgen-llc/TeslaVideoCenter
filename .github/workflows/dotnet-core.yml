@@ -7,13 +7,29 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  build-windows:
+    runs-on: windows-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Setup .NET Core
+          uses: actions/setup-dotnet@v1
+          with:
+            dotnet-version: 3.1.301
+        - name: Install dependencies
+          run: dotnet restore
+        - name: Build
+          run: dotnet build --configuration Release --no-restore
+        - name: Test
+          run: dotnet test --no-restore --verbosity normal
+         - name: Publish Windows
+          run: dotnet publish --runtime win10-x64 --configuration Release
+   
+  macos-bundle:
+    runs-on: macOS-latest
     
     defaults:
       run:
-        working-directory: TeslaVideoCenter
+        working-directory: TeslaVideoCenter.Mac
       
     steps:
     - uses: actions/checkout@v2
@@ -27,8 +43,6 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: Publish Windows
-      run: dotnet publish --runtime win10-x64 --configuration Release
     - name: Publish MacOS
       run: dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-x64 -property:Configuration=Release
     - name: Archive MacOS App
