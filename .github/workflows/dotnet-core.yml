@@ -52,9 +52,9 @@ jobs:
       run: dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-x64 -property:Configuration=Release
     - name: Archive MacOS App
       run: tar -cf TeslaVideoCenter.tar 'Tesla Video Center.app'
-      working-directory: TeslaVideoCenter/bin/Release/netcoreapp3.1/osx-x64/publish/
+      working-directory: TeslaVideoCenter.Mac/bin/Release/netcoreapp3.1/osx-x64/publish/
     - name: Upload MacOS App
       uses: actions/upload-artifact@v2
       with:
         name: MacOS-App
-        path: 'TeslaVideoCenter/bin/Release/netcoreapp3.1/osx-x64/publish/TeslaVideoCenter.tar'
+        path: 'TeslaVideoCenter.Mac/bin/Release/netcoreapp3.1/osx-x64/publish/TeslaVideoCenter.tar'
