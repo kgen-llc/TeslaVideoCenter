@@ -15,6 +15,7 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="fforjan.staticffmpeg.windows" Version="4.3.1-initial-packaging" />
     <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.8" />
 
     <ProjectReference Include="..\TeslaVideoCenter.Common\TeslaVideoCenter.Common.csproj" />

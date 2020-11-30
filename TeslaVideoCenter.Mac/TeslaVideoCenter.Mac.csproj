@@ -15,7 +15,7 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
    <ItemGroup>
-    <AssetsSourceFiles Include="Assets/TeslaVideoCenter.icns"/>
+    <AssetsSourceFiles Include="Assets/TeslaVideoCenter.icns" />
   </ItemGroup>
 
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
@@ -23,6 +23,7 @@
   </Target>
   <ItemGroup>
     <PackageReference Include="Dotnet.Bundle" Version="*" />
+    <PackageReference Include="fforjan.staticffmpeg.mac" Version="4.3.1-initial-packaging" />
     <PackageReference Include="VideoLAN.LibVLC.Mac" Version="3.1.3.1" />
     <ProjectReference Include="..\TeslaVideoCenter.Common\TeslaVideoCenter.Common.csproj" />
   </ItemGroup>
