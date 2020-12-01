@@ -49,6 +49,8 @@ namespace TeslaVideoCenter.Models
 
         public DateTime Date {get;}
 
+        public string Information { get; set;}
+
         public ObservableCollectionExtended<Video> Videos { get; }
 
         public void CheckForFullEvent(){

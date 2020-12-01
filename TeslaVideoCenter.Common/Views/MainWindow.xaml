@@ -4,6 +4,7 @@
     xmlns:v="clr-namespace:TeslaVideoCenter.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
      mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="TeslaVideoCenter.Views.MainWindow" Icon="/Assets/TeslaVideoCenter.ico" Title="Tesla Video Center">
 
     <Design.DataContext>
@@ -16,16 +17,18 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Column="0" Items="{Binding EventsViewModel.Events}" Name="Events">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="5" Text="{Binding Path=Event.City}"/>
-                        <TextBlock Margin="5" Text="{Binding Path=Event.Date}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <styles:Card Margin="5" Padding="10" Grid.Column="0">
+            <ListBox  Items="{Binding EventsViewModel.Events}" Name="Events">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="5" Text="{Binding Path=Event.City}"/>
+                            <TextBlock Margin="5" Text="{Binding Path=Event.Date}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            </styles:Card>
         <v:EventView Grid.Column="1"  DataContext="{Binding Path=SelectedItem,ElementName=Events}" />
         
     </Grid>
