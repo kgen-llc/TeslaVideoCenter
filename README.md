@@ -7,8 +7,10 @@ This is :
 Currently tested on :
 - Mac x64 !
 
-# the LibVCLSharp.Avalonia is coming from ..
-https://github.com/donandren/vlcsharpavalonia
+# Externl source coming from ..
+ - LibVCLSharp.Avalonia: https://github.com/donandren/vlcsharpavalonia
+ - part of the icon: https://thenounproject.com/term/tesla-model-3/487299/
+ - FFMepg: https://ffmpeg.org/
 
 # How to use it:
 Copy all your files from your USB drive to a TeslaCam folder within your document folder.

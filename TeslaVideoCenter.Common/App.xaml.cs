@@ -19,6 +19,7 @@ namespace TeslaVideoCenter
             {
                 desktop.MainWindow = new MainWindow
                 {
+                    Loca
                     DataContext = new MainWindowViewModel(),
                 };
             }

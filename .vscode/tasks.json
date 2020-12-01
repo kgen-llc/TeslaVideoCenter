@@ -13,6 +13,28 @@
             ],
             "problemMatcher": "$msCompile"
         },{
+            "label": "build-windows",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/TeslaVideoCenter.Windows/TeslaVideoCenter.Windows.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },{
+            "label": "build-mac",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/TeslaVideoCenter.Mac/TeslaVideoCenter.Mac.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },{
             "label": "run-mac",
             "command": "dotnet",
             "type": "process",

@@ -1,4 +1,3 @@
-cp ../../TeslaVideoCenter.Common/Assets/TeslaVideoCenter.png . 
 mkdir TeslaVideoCenter.iconset
 sips -z 16 16     TeslaVideoCenter.png --out TeslaVideoCenter.iconset/icon_16x16.png
 sips -z 32 32     TeslaVideoCenter.png --out TeslaVideoCenter.iconset/icon_16x16@2x.png
@@ -9,6 +8,8 @@ sips -z 256 256   TeslaVideoCenter.png --out TeslaVideoCenter.iconset/icon_128x1
 sips -z 256 256   TeslaVideoCenter.png --out TeslaVideoCenter.iconset/icon_256x256.png
 sips -z 512 512   TeslaVideoCenter.png --out TeslaVideoCenter.iconset/icon_256x256@2x.png
 sips -z 512 512   TeslaVideoCenter.png --out TeslaVideoCenter.iconset/icon_512x512.png
-mv TeslaVideoCenter.png TeslaVideoCenter.iconset/icon_512x512@2x.png
+cp TeslaVideoCenter.png TeslaVideoCenter.iconset/icon_512x512@2x.png
+convert TeslaVideoCenter.iconset/icon_16x16.png TeslaVideoCenter.iconset/icon_32x32.png TeslaVideoCenter.iconset/icon_128x128.png TeslaVideoCenter.iconset/icon_256x256.png  TeslaVideoCenter.ico
 iconutil -c icns TeslaVideoCenter.iconset
+mv -f TeslaVideoCenter.icns ../../TeslaVideoCenter.Mac/Assets/TeslaVideoCenter.icns
 rm -R TeslaVideoCenter.iconset
