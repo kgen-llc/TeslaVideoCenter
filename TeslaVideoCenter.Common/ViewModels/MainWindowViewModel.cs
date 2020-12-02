@@ -27,7 +27,7 @@ namespace TeslaVideoCenter.ViewModels
 
             this.EventsViewModel = new EventsViewModel(this.repository);
 
-            this.HelpMeCommand = ReactiveCommand.Create(() => OpenUrl.WithSystemBrowser("https://github.com/fforjan/TeslaVideoCenter"));
+            this.HelpMeCommand = ReactiveCommand.Create(() => OpenUrl.WithSystemBrowser("https://github.com/fforjan/TeslaVideoCenter/wiki"));
 
         }
 
