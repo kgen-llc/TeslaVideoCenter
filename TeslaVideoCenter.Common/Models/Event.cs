@@ -19,6 +19,8 @@ namespace TeslaVideoCenter.Models
 
             this.VideosDirectory = Path.GetDirectoryName(eventJson);
 
+            this.RawName = Directory.GetParent(eventJson).Name;
+
 
             this.Videos = new ObservableCollectionExtended<Video>(
                 GetVideos(this.VideosDirectory)
@@ -40,6 +42,8 @@ namespace TeslaVideoCenter.Models
                 return fileNameOnly.Substring(fileNameOnly.LastIndexOf('-') + 1);
             }
         }
+
+        public string RawName {get;}
 
         public string VideosDirectory { get;}
 
