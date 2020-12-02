@@ -2,7 +2,7 @@ using System.Windows.Input;
 using Avalonia;
 using Avalonia.Xaml.Interactivity;
 
-namespace TeslaVideoCenter.Views.Behaviors
+namespace TeslaVideoCenter.Common.Views.Behaviors
 {
     public class CommandBasedBehavior<T> : Behavior<T> where T : AvaloniaObject
 	{

@@ -3,9 +3,9 @@ using System.IO;
 using System.Windows.Input;
 using ReactiveUI;
 using TeslaVideoCenter.Models;
-using TeslaVideoCenter.Services;
+using TeslaVideoCenter.Common.Services;
 
-namespace TeslaVideoCenter.ViewModels
+namespace TeslaVideoCenter.Common.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {

@@ -1,6 +1,6 @@
 using Avalonia.Input;
 
-namespace TeslaVideoCenter.Views.Behaviors
+namespace TeslaVideoCenter.Common.Views.Behaviors
 {
 
     public class CommandOnClickBehavior : CommandBasedBehavior<InputElement>

@@ -3,7 +3,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace TeslaVideoCenter.Services
+namespace TeslaVideoCenter.Common.Services
 {
     static class OpenUrl
     {

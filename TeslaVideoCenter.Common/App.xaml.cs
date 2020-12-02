@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using TeslaVideoCenter.ViewModels;
-using TeslaVideoCenter.Views;
+using TeslaVideoCenter.Common.ViewModels;
+using TeslaVideoCenter.Common.Views;
 
-namespace TeslaVideoCenter
+namespace TeslaVideoCenter.Common
 {
     public class App : Application
     {

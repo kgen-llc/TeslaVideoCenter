@@ -7,7 +7,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using LibVLCSharp.Shared;
 
-namespace TeslaVideoCenter.Views
+namespace TeslaVideoCenter.Common.Views
 {
     public class VideoView : UserControl
     {

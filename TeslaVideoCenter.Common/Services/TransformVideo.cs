@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using FFMpegCore.Arguments;
 using TeslaVideoCenter.Models;
 
-namespace TeslaVideoCenter.Services
+namespace TeslaVideoCenter.Common.Services
 {
 
     public class HorizontalStack : IArgument

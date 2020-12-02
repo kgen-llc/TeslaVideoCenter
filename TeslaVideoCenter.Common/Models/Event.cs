@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using DynamicData.Binding;
-using TeslaVideoCenter.Services;
+using TeslaVideoCenter.Common.Services;
 
 namespace TeslaVideoCenter.Models
 {

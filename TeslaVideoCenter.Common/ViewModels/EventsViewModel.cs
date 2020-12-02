@@ -5,7 +5,7 @@ using DynamicData;
 using DynamicData.Binding;
 using TeslaVideoCenter.Models;
 
-namespace TeslaVideoCenter.ViewModels
+namespace TeslaVideoCenter.Common.ViewModels
 {
     public class EventsViewModel : ViewModelBase
     {

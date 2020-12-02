@@ -2,7 +2,7 @@
 using Avalonia.ReactiveUI;
 using LibVLCSharp.Avalonia;
 
-namespace TeslaVideoCenter
+namespace TeslaVideoCenter.Windows
 {
     class Program
     {
@@ -14,7 +14,7 @@ namespace TeslaVideoCenter
 
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+            => AppBuilder.Configure<TeslaVideoCenter.Common.App>()
                 .UsePlatformDetect()
                 .UseReactiveUI()
                 .UseVLCSharp()

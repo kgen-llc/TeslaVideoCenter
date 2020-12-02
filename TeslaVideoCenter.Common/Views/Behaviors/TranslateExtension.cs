@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Markup.Xaml.MarkupExtensions;
 using TeslaVideoCenter.Common.Services;
 
-namespace TeslaVideoCenter.Views.Behaviors
+namespace TeslaVideoCenter.Common.Views.Behaviors
 {
     public class TranslateExtension : MarkupExtension
     {

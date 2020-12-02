@@ -2,14 +2,13 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ReactiveUI;
 using TeslaVideoCenter.Models;
-using TeslaVideoCenter.Services;
+using TeslaVideoCenter.Common.Services;
 using DynamicData;
 using DynamicData.Binding;
 using System.Reactive.Linq;
 using System.Linq;
-using TeslaVideoCenter.Common.Services;
 
-namespace TeslaVideoCenter.ViewModels
+namespace TeslaVideoCenter.Common.ViewModels
 {
     public class EventViewModel : ViewModelBase
     {

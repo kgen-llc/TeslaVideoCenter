@@ -1,4 +1,4 @@
-namespace TeslaVideoCenter.Services
+namespace TeslaVideoCenter.Common.Services
 {
     public class VideoManager
     {

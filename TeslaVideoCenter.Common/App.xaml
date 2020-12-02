@@ -1,8 +1,8 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:TeslaVideoCenter"
+             xmlns:local="clr-namespace:TeslaVideoCenter.Common"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
-             x:Class="TeslaVideoCenter.App">
+             x:Class="TeslaVideoCenter.Common.App">
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>

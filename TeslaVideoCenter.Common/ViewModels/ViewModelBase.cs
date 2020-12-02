@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
-using ReactiveUI;
+﻿using ReactiveUI;
 
-namespace TeslaVideoCenter.ViewModels
+namespace TeslaVideoCenter.Common.ViewModels
 {
     public class ViewModelBase : ReactiveObject
     {
