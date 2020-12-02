@@ -21,7 +21,6 @@
     <PackageReference Include="FFMpegCore" Version="3.2.0" />
     <PackageReference Include="Material.Avalonia" Version="0.10.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
- 
     <ProjectReference Include="..\LibVLCSharp.Avalonia\LibVLCSharp.Avalonia.csproj" />
   </ItemGroup>
 </Project>

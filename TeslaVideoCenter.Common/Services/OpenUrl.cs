@@ -9,7 +9,7 @@ namespace TeslaVideoCenter.Common.Services
     {
         public static void WithSystemBrowser(string url)
         {
-#pragma warning disable  CS0642 - We wait on process
+#pragma warning disable  CS0642 // We wait on process
             using (var process = Process.Start(new ProcessStartInfo
             {
                 FileName = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? url : "open",

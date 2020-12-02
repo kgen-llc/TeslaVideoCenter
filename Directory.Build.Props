@@ -1,0 +1,7 @@
+<Project>
+ <PropertyGroup>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <VersionPrefix>2020.1</VersionPrefix>
+ </PropertyGroup>
+</Project>
