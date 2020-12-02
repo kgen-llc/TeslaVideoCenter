@@ -2,6 +2,7 @@
 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
 xmlns:vm="clr-namespace:TeslaVideoCenter.ViewModels" 
 xmlns:v="clr-namespace:TeslaVideoCenter.Views"
+xmlns:s="clr-namespace:TeslaVideoCenter.Common.Services"
 xmlns:behaviors="clr-namespace:TeslaVideoCenter.Views.Behaviors"
 xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -38,7 +39,7 @@ xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Intera
         </styles:Card>
         <v:EventView Grid.Column="1" DataContext="{Binding Path=SelectedItem,ElementName=Events}"/>
         <styles:Card Margin="5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock  Text="Help me !"  Margin="5,0,0,0" Classes="LinkButton">
+                <TextBlock  Text="{behaviors:TranslateExtension HelpMe}"  Margin="5,0,0,0" Classes="LinkButton">
                     <i:Interaction.Behaviors>
                         <behaviors:CommandOnClickBehavior Command="{Binding Path=HelpMeCommand}"/>
                     </i:Interaction.Behaviors>

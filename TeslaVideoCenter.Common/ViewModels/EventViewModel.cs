@@ -7,6 +7,7 @@ using DynamicData;
 using DynamicData.Binding;
 using System.Reactive.Linq;
 using System.Linq;
+using TeslaVideoCenter.Common.Services;
 
 namespace TeslaVideoCenter.ViewModels
 {
