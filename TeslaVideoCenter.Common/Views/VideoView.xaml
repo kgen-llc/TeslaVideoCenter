@@ -12,7 +12,7 @@
   <v:VideoView Grid.Column="1" x:Name="VideoView">
     <StackPanel Orientation="Horizontal" x:Name="test" Spacing="5" VerticalAlignment="Bottom">
       <Button Content="{behaviors:TranslateExtension PlayVideo}" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PlayButton_Click" />
-      <Button Content="{behaviors:TranslateExtension StopVideo" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="StopButton_Click" />
+      <Button Content="{behaviors:TranslateExtension StopVideo}" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="StopButton_Click" />
       <Button Content="{behaviors:TranslateExtension PauseVideo}" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PauseButton_Click" />
 
       <TextBlock Classes="Part" x:Name="CurrentPart" VerticalAlignment="Center" />
