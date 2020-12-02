@@ -1,6 +1,6 @@
 # TeslaVideoCenter
 
-![.NET Core](https://github.com/fforjan/TeslaVideoCenter/workflows/.NET%20Core/badge.svg)
+![.NET Core](https://github.com/fforjan/TeslaVideoCenter/workflows/Main%20Build/badge.svg)
 
 This is :
 - a simple application for view the recorded video for the DashCam/Sentry Cam from a Tesla.
