@@ -1,6 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
   xmlns:v="using:LibVLCSharp.Avalonia" x:Class="TeslaVideoCenter.Common.Views.VideoView">
   <UserControl.Styles>
@@ -10,9 +11,9 @@
   </UserControl.Styles>
   <v:VideoView Grid.Column="1" x:Name="VideoView">
     <StackPanel Orientation="Horizontal" x:Name="test" Spacing="5" VerticalAlignment="Bottom">
-      <Button Content="PLAY" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PlayButton_Click" />
-      <Button Content="STOP" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="StopButton_Click" />
-      <Button Content="Pause" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PauseButton_Click" />
+      <Button Content="{behaviors:TranslateExtension PlayVideo}" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PlayButton_Click" />
+      <Button Content="{behaviors:TranslateExtension StopVideo" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="StopButton_Click" />
+      <Button Content="{behaviors:TranslateExtension PauseVideo}" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PauseButton_Click" />
 
       <TextBlock Classes="Part" x:Name="CurrentPart" VerticalAlignment="Center" />
     </StackPanel>
