@@ -4,6 +4,7 @@ using System.Windows.Input;
 using ReactiveUI;
 using TeslaVideoCenter.Models;
 using TeslaVideoCenter.Common.Services;
+using System.Reflection;
 
 namespace TeslaVideoCenter.Common.ViewModels
 {
@@ -37,5 +38,9 @@ namespace TeslaVideoCenter.Common.ViewModels
         public Video CurrentVideo { get => this.currentVideo; set => this.RaiseAndSetIfChanged(ref this.currentVideo, value); }
 
         public ICommand HelpMeCommand { get; }
+
+        public string Version {get => GetType().Assembly.GetName().Version.ToString(2);}
+
+        public string Info { get => "All product and company names are trademarks™ or registered® trademarks of their respective holders.";}
     }
 }

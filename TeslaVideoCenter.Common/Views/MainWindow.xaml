@@ -3,19 +3,12 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 xmlns:vm="clr-namespace:TeslaVideoCenter.Common.ViewModels" 
 xmlns:v="clr-namespace:TeslaVideoCenter.Common.Views"
 xmlns:s="clr-namespace:TeslaVideoCenter.Common.Services"
-xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors"
 xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="TeslaVideoCenter.Common.Views.MainWindow" Icon="/Assets/TeslaVideoCenter.ico" Title="Tesla Video Center">
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Window.Styles>
-        <Style Selector="TextBlock.LinkButton">
-            <Setter Property="Foreground" Value="Blue"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-    </Window.Styles>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -39,24 +32,7 @@ xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Intera
         </styles:Card>
         <v:EventView Grid.Column="1" DataContext="{Binding Path=SelectedItem,ElementName=Events}"/>
         <styles:Card Margin="5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock  Text="{behaviors:TranslateExtension HelpMe}"  Margin="5,0,0,0" Classes="LinkButton">
-                    <i:Interaction.Behaviors>
-                        <behaviors:CommandOnClickBehavior Command="{Binding Path=HelpMeCommand}"/>
-                    </i:Interaction.Behaviors>
-
-                     <TextBlock.TextDecorations>
-              <TextDecorationCollection>
-               <TextDecoration
-                  Location="Underline"
-                  StrokeThicknessUnit="Pixel"
-                  StrokeThickness="1"
-                  StrokeOffset="3"
-                  StrokeOffsetUnit="Pixel"
-                  Stroke="Blue">
-                </TextDecoration>
-              </TextDecorationCollection>
-            </TextBlock.TextDecorations>
-                </TextBlock>
+            <v:StatusBar />
         </styles:Card>
     </Grid>
 </Window>
