@@ -21,7 +21,7 @@
     <TextBlock Text="Event :" Grid.Row="0" Grid.Column="0" />
     <TextBlock Text="{Binding Event.RawName}" Grid.Row="0" Grid.Column="1"/>
     <TextBlock Text="Reason :" Grid.Row="0" Grid.Column="2"/>
-    <TextBlock Text="{Binding Event.Reason}" Grid.Row="0" Grid.Column="3"/>
+    <TextBlock Text="{Binding Reason}" Grid.Row="0" Grid.Column="3"/>
 
     <TextBlock Text="Date :" Grid.Row="1" Grid.Column="0"/>
     <TextBlock Text="{Binding Event.Date}" Grid.Row="1" Grid.Column="1"/>

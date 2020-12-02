@@ -14,6 +14,8 @@ namespace TeslaVideoCenter.ViewModels
     {
         public EventViewModel(Event @event)
         {
+
+            this.stringResources = new StringResources();
             this.Event = @event;
 
             var anyVideoToBeProcessedMonitor = @event.Videos
@@ -25,8 +27,12 @@ namespace TeslaVideoCenter.ViewModels
 
         }
 
+        private readonly StringResources stringResources;
+
         public Event Event { get; }
 
+        public string Reason {get { return this.stringResources.GetResource(this.Event.Reason); }}
+        
         public ICommand GenerateOverallVideoCommand { get; }
 
         private async Task GenerateOverallVideo()
