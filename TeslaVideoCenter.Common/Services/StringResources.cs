@@ -7,6 +7,8 @@ namespace TeslaVideoCenter.Common.Services
     {
         private readonly ResourceManager rsm;
 
+        public const bool ChineseLetterToLetterIsOn = false;
+
         public StringResources()
         {
             this.rsm = new ResourceManager("TeslaVideoCenter.Common.Services.StringResources", Assembly.GetExecutingAssembly());
@@ -15,7 +17,13 @@ namespace TeslaVideoCenter.Common.Services
         public string GetResource(string id)
         {
             var resource = this.rsm.GetString(id);
-            return string.IsNullOrEmpty(resource) ? id : resource;
+            resource =  string.IsNullOrEmpty(resource) ? id : resource;
+
+            if(ChineseLetterToLetterIsOn) {
+                resource = ChineseLetterToLetter.Convert(resource);
+            }
+
+            return resource;
         }
 
         public string this[string id] {
