@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
     <ApplicationIcon>..\TeslaVideoCenter.Common\Assets\TeslaVideoCenter.ico</ApplicationIcon>
+    <VlcWindowsX86Enabled>false</VlcWindowsX86Enabled>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Models\" />
