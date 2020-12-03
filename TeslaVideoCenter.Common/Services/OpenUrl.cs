@@ -1,7 +1,7 @@
-
-
 using System.Diagnostics;
+using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace TeslaVideoCenter.Common.Services
 {
@@ -20,5 +20,14 @@ namespace TeslaVideoCenter.Common.Services
             }));
 #pragma warning restore CS0642
         }
+
+         public static  async Task<string> AndReturnContent(string url) {
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(url);
+            var contents = await response.Content.ReadAsStringAsync();
+
+            return contents;
+         }
     }
 }

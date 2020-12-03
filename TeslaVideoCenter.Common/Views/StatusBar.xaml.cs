@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using TeslaVideoCenter.Common.ViewModels;
 
 namespace TeslaVideoCenter.Common.Views
 {
@@ -8,6 +9,7 @@ namespace TeslaVideoCenter.Common.Views
         public StatusBar()
         {
             InitializeComponent();
+            this.DataContext = new StatusBarViewModel();
         }
 
         private void InitializeComponent()

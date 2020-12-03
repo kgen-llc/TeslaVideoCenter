@@ -11,10 +11,13 @@ xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors" xmlns:i=
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="{behaviors:TranslateExtension HelpMe}" Margin="5,0,0,0" Classes="LinkButton">
+      
+        <TextBlock Text="{behaviors:TranslateExtension HelpMe}" Margin="5,0,5,0" Classes="LinkButton">
             <i:Interaction.Behaviors>
                 <behaviors:CommandOnClickBehavior Command="{Binding Path=HelpMeCommand}"/>
             </i:Interaction.Behaviors>
@@ -24,7 +27,9 @@ xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors" xmlns:i=
                 </TextDecorationCollection>
             </TextBlock.TextDecorations>
         </TextBlock>
-        <TextBlock Grid.Column="1" Text="{Binding Info}"/>
-        <TextBlock Grid.Column="2" Text="{Binding Version}"/>
+        <TextBlock Grid.Column="1" Text="‖"/>
+        <TextBlock Grid.Column="2" Text="{Binding Info}"/>
+        <TextBlock Grid.Column="3" Text="‖"/>
+        <TextBlock Grid.Column="4" Text="{Binding Version}"/>
     </Grid>
 </UserControl>
