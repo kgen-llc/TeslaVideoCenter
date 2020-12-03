@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using LibVLCSharp.Shared;
+using TeslaVideoCenter.Common.Services;
 
 namespace TeslaVideoCenter.Common.Views
 {
     public class VideoView : UserControl
     {
+        private readonly StringResources stringResources;
         private LibVLCSharp.Avalonia.VideoView VlcVideoView;
 
         private TextBlock CurrentPart;
@@ -25,13 +28,14 @@ namespace TeslaVideoCenter.Common.Views
         public VideoView()
         {
             InitializeComponent();
+            this.stringResources = new StringResources();
 
             VlcVideoView = this.Get<LibVLCSharp.Avalonia.VideoView>("VideoView");
             CurrentPart = this.Get<Avalonia.Controls.TextBlock>("CurrentPart");
             _libVLC = new LibVLC();
             _mediaPlayer = new MediaPlayer(_libVLC);
 
-            this.CurrentPart.Text = "No Video Selected";
+            this.CurrentPart.Text =  this.stringResources.GetResource("NoVideoSelected") ;
 
             VlcVideoView.MediaPlayer = _mediaPlayer;
             _mediaPlayer.EndReached += (sender, arg) =>
@@ -58,7 +62,7 @@ namespace TeslaVideoCenter.Common.Views
             var video = this.DataContext as string[];
             if (video == null)
             {
-                this.CurrentPart.Text = "No Video Selected";
+                this.CurrentPart.Text = this.stringResources.GetResource("NoVideoSelected");
             }
             else
             {
@@ -87,7 +91,7 @@ namespace TeslaVideoCenter.Common.Views
                     this.currentPart = -1;
                 }
 
-                this.CurrentPart.Text = "Part : " + this.currentPart.ToString();
+                this.CurrentPart.Text = string.Format(CultureInfo.CurrentCulture, this.stringResources.GetResource("VideoPartIndex"), this.currentPart.ToString());
             }
             else
             {

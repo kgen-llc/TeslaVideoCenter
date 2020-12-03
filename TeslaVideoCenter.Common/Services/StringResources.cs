@@ -7,7 +7,7 @@ namespace TeslaVideoCenter.Common.Services
     {
         private readonly ResourceManager rsm;
 
-        public const bool ChineseLetterToLetterIsOn = true;
+        public const bool ChineseLetterToLetterIsOn = false;
 
         public StringResources()
         {

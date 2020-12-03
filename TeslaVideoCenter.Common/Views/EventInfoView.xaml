@@ -2,6 +2,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:v="clr-namespace:TeslaVideoCenter.Common.Views"
+  xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="TeslaVideoCenter.Common.Views.EventInfoView">
    <Grid Margin="10">
     <Grid.ColumnDefinitions>
@@ -18,18 +19,18 @@
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
 
-    <TextBlock Text="Event :" Grid.Row="0" Grid.Column="0" />
+    <TextBlock Text="{behaviors:TranslateExtension EventName}" Grid.Row="0" Grid.Column="0" />
     <TextBlock Text="{Binding Event.RawName}" Grid.Row="0" Grid.Column="1"/>
-    <TextBlock Text="Reason :" Grid.Row="0" Grid.Column="2"/>
+    <TextBlock Text="{behaviors:TranslateExtension EventReason}" Grid.Row="0" Grid.Column="2"/>
     <TextBlock Text="{Binding Reason}" Grid.Row="0" Grid.Column="3"/>
 
-    <TextBlock Text="Date :" Grid.Row="1" Grid.Column="0"/>
+    <TextBlock Text="{behaviors:TranslateExtension EventDate}" Grid.Row="1" Grid.Column="0"/>
     <TextBlock Text="{Binding Event.Date}" Grid.Row="1" Grid.Column="1"/>
 
-    <TextBlock Text="City :" Grid.Row="1" Grid.Column="2"/> 
+    <TextBlock Text="{behaviors:TranslateExtension EventCity}" Grid.Row="1" Grid.Column="2"/> 
     <TextBlock Text="{Binding Event.City}" Grid.Row="1" Grid.Column="3"/>
 
-    <TextBlock Text="Information" Grid.Row="2" Grid.Column="0"/>
+    <TextBlock Text="{behaviors:TranslateExtension EventInformation}" Grid.Row="2" Grid.Column="0"/>
     <TextBox  Text="{Binding Event.Information}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
   </Grid>
 </UserControl>
