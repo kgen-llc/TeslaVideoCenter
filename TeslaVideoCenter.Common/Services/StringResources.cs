@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Resources;
+using Splat;
 
 namespace TeslaVideoCenter.Common.Services
 {
@@ -7,7 +8,7 @@ namespace TeslaVideoCenter.Common.Services
     {
         private readonly ResourceManager rsm;
 
-        public const bool ChineseLetterToLetterIsOn = false;
+        public bool ChineseLetterToLetterIsOn = false;
 
         public StringResources()
         {
@@ -24,7 +25,6 @@ namespace TeslaVideoCenter.Common.Services
             else if(ChineseLetterToLetterIsOn) {
                 resource = ChineseLetterToLetter.Convert(resource);
             }
-
             return resource;
         }
 
