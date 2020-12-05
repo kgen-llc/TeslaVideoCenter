@@ -24,10 +24,13 @@
       </ListBox>
     </styles:Card>
     <styles:Card Margin="5" Padding="10" Grid.Column="0" Grid.Row="2">
-      <Button Command="{Binding GenerateOverallVideoCommand}" Content="{behaviors:TranslateExtension GenerateEventVideo}"/>
+      <StackPanel Orientation="Vertical">
+        <Button Command="{Binding GenerateOverallVideoCommand}" Content="{behaviors:TranslateExtension GenerateEventVideo}"/>
+        <ProgressBar Minimum="0" Maximum="100" Value="{Binding Progress}"/>
+      </StackPanel>
     </styles:Card>
     <styles:Card Margin="5" Padding="10" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-      <v:VideoView DataContext="{Binding Path=SelectedItem.FilePath, ElementName=Videos}" />
+      <v:VideoView DataContext="{Binding Path=SelectedItem.FilePath, ElementName=Videos}"/>
     </styles:Card>
   </Grid>
 </UserControl>
