@@ -9,7 +9,7 @@
       <Setter Property="Foreground" Value="White"/>
     </Style>
   </UserControl.Styles>
-  <v:VideoView Grid.Column="1" x:Name="VideoView">
+    <v:VideoView x:Name="VideoView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
     <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Bottom">
       <Button Content="{behaviors:TranslateExtension PlayVideo}" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PlayButton_Click" />
       <Button Content="{behaviors:TranslateExtension StopVideo}" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="StopButton_Click" />

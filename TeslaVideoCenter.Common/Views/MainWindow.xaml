@@ -30,7 +30,7 @@ xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Intera
                 </ListBox.ItemTemplate>
             </ListBox>
         </styles:Card>
-        <v:EventView Grid.Column="1" DataContext="{Binding Path=SelectedItem,ElementName=Events}"/>
+        <v:EventView IsVisible="{Binding Path=!!SelectedItem,ElementName=Events}" Grid.Column="1" DataContext="{Binding Path=SelectedItem,ElementName=Events}"/>
         <styles:Card Margin="5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
             <v:StatusBar />
         </styles:Card>
