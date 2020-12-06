@@ -53,7 +53,18 @@ namespace TeslaVideoCenter.Models
 
         public DateTime Date {get;}
 
-        public string Information { get; set;}
+        public string Information { get {
+            if(File.Exists(InformationFileName))
+                return File.ReadAllText(Path.Combine(VideosDirectory, "tvc.information"));
+            else 
+                return string.Empty;
+        } set {
+            File.WriteAllText(InformationFileName, value);
+        }}
+
+        private string InformationFileName {
+            get { return Path.Combine(VideosDirectory, "tvc.information");}
+        }
 
         public ObservableCollectionExtended<Video> Videos { get; }
 
