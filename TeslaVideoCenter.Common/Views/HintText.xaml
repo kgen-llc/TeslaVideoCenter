@@ -5,18 +5,10 @@
    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
    xmlns:v="clr-namespace:TeslaVideoCenter.Common.Views"
    mc:Ignorable="d"
-   d:DesignWidth="800"
-   d:DesignHeight="450"
-   x:Class="TeslaVideoCenter.Common.Views.HintText">
+   x:Class="TeslaVideoCenter.Common.Views.HintText" HorizontalAlignment="Center" VerticalAlignment="Center">
   <UserControl.Styles>
     <Style
        Selector="TextBlock.HintTextBlock">
-      <Setter
-         Property="VerticalAlignment"
-         Value="Center"/>
-      <Setter
-         Property="HorizontalAlignment"
-         Value="Center"/>
       <Setter
          Property="FontStyle"
          Value="Italic"/>
@@ -25,6 +17,8 @@
          Value="{DynamicResource MaterialDesignBodyLight}"/>
     </Style>
   </UserControl.Styles>
-
-  <TextBlock Classes="HintTextBlock" Text="{Binding $parent[v:HintText].Text}}" />
+   <StackPanel Orientation="Horizontal">
+      <Canvas Width="24" Height="24"><Path Fill="{DynamicResource MaterialDesignBodyLight}" Data="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z" /></Canvas>
+      <TextBlock Classes="HintTextBlock" Text="{Binding $parent[v:HintText].Text}}" />
+   </StackPanel>
 </UserControl>
