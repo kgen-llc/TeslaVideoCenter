@@ -45,7 +45,7 @@ namespace TeslaVideoCenter.Common.ViewModels
 
         private async Task GenerateOverallVideo()
         {
-            await GridLayout.Process(this.SetProgress, this.Event);
+            await ClassicLayout.Process(this.SetProgress, this.Event);
             this.Event.CheckForFullEvent();
         }
     }

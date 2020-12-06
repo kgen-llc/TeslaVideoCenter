@@ -39,15 +39,15 @@ namespace TeslaVideoCenter.Common.Services.VideoLayout
         /// </summary>
         private class ClassicLayoutArgument : IArgument
         {
-            public string Text => @" -filter_complex ""nullsrc=size=960x480 [base];
+            public string Text => @" -filter_complex ""color=s=960x480:c=black [base];
             [0:v] setpts=PTS-STARTPTS, scale=320x240 [UpperMiddle];
             [1:v] setpts=PTS-STARTPTS, scale=320x240 [LowerLeft];
             [2:v] setpts=PTS-STARTPTS, scale=320x240 [LowerMiddle];
             [3:v] setpts=PTS-STARTPTS, scale=320x240 [LowerRight];
-            [base][UpperMiddle] overlay=x=320 [tmp1];
-            [tmp1][LowerLeft] overlay=y=240 [tmp2];
-            [tmp2][LowerMiddle] overlay=y=240:x=320 [tmp3];
-            [tmp3][LowerRight] overlay=x=640:y=240"" ";
+            [base][UpperMiddle] overlay=shortest=1:x=320 [tmp1];
+            [tmp1][LowerLeft] overlay=shortest=1:y=240 [tmp2];
+            [tmp2][LowerMiddle] overlay=shortest=1:y=240:x=320 [tmp3];
+            [tmp3][LowerRight] overlay=shortest=1:x=640:y=240"" ";
         } 
     }
 }
