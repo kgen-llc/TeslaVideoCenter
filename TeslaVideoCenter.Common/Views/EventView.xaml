@@ -74,10 +74,8 @@
        Grid.Row="1"
        Grid.RowSpan="2">
       <Panel>
-        <TextBlock
-           Classes="HintTextBlock"
-           IsVisible="{Binding Path=!SelectedItem, ElementName=Videos}"
-           Text="{behaviors:TranslateExtension HintNoSelectedVideo}"/>
+         <v:HintText Text="{behaviors:TranslateExtension HintNoSelectedVideo}" 
+           IsVisible="{Binding Path=!SelectedItem, ElementName=Videos}"/>
         <v:VideoView
            IsVisible="{Binding Path=!!SelectedItem, ElementName=Videos}"
            DataContext="{Binding Path=SelectedItem.FilePath, ElementName=Videos}"/>
