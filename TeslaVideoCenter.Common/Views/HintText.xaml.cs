@@ -17,7 +17,7 @@ namespace TeslaVideoCenter.Common.Views
             InitializeComponent();
         }
 
-        private string text;
+        private string text = string.Empty;
         public string Text
         {
             get { return text; }
