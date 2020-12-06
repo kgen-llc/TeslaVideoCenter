@@ -11,8 +11,9 @@ namespace TeslaVideoCenter
             where T : AppBuilderBase<T>, new()
         {
             var dummy = Directory.GetCurrentDirectory();
-            return b.AfterSetup(_ => {
-                
+            return b.AfterSetup(_ =>
+            {
+
                 FFMpegOptions.Configure(fFMpegOptions);
                 FFMpegHelper.VerifyFFMpegExists();
             });
