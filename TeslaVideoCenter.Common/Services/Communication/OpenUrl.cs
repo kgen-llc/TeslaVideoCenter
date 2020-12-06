@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-namespace TeslaVideoCenter.Common.Services
+namespace TeslaVideoCenter.Common.Services.Communication
 {
     static class OpenUrl
     {

@@ -5,7 +5,7 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ReactiveUI;
-using TeslaVideoCenter.Common.Services;
+using TeslaVideoCenter.Common.Services.Communication;
 
 namespace TeslaVideoCenter.Common.ViewModels
 {
