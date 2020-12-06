@@ -1,0 +1,1 @@
+This project generates the MacOS X application and contains specific code to the MacOS X platform

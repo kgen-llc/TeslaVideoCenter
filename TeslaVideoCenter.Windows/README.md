@@ -1,0 +1,1 @@
+This project generates the Windows application and contains specific code to the Windows platform
