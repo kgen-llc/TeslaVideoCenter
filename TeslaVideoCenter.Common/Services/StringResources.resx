@@ -181,4 +181,14 @@
     <value>{0} Parts</value>
     <comment/>
   </data>
+  <data name="HintNoSelectedVideo" xml:space="preserve">
+    <value>No video is currently selected.
+Please select one from the list on the left.</value>
+    <comment/>
+  </data>
+   <data name="HintNoSelectedEvent" xml:space="preserve">
+    <value>No event is currently selected.
+Please select one from the list on the left.</value>
+    <comment/>
+  </data>
 </root>

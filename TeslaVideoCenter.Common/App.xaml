@@ -14,5 +14,11 @@
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
         <StyleInclude Source="avares://Material.Avalonia/Material.Avalonia.Templates.xaml" />
         <StyleInclude Source="avares://LibVLCSharp.Avalonia/Styles.xaml" />
+        <Style Selector="TextBlock.HintTextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+             <Setter Property="HorizontalAlignment" Value="Center" />
+             <Setter Property="FontStyle" Value="Italic" />
+             <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBodyLight}" />
+        </Style>
     </Application.Styles>
 </Application>
