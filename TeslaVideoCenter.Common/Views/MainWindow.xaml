@@ -31,33 +31,25 @@
                <RowDefinition
                      Height="40"/>
           </Grid.RowDefinitions>
-            <styles:Card IsVisible="{Binding !EventsViewModel.Events.Count}"
+          <styles:Card
+                IsVisible="{Binding !EventsViewModel.Events.Count}"
                 Margin="5"
                 Padding="10"
                 Grid.Column="0">
                <v:HintText
-                     Text="{behaviors:TranslateExtension HintNoEventsExists}"
-                    />
+                     Text="{behaviors:TranslateExtension HintNoEventsExists}"/>
           </styles:Card>
-
-          <styles:Card IsVisible="{Binding EventsViewModel.Events.Count}"
+          <styles:Card
+                IsVisible="{Binding EventsViewModel.Events.Count}"
                 Margin="5"
-                Padding="10"
                 Grid.Column="0">
                <ListBox
                      Items="{Binding EventsViewModel.Events}"
                      Name="Events">
                     <ListBox.ItemTemplate>
                          <DataTemplate>
-                              <StackPanel
-                                    Orientation="Horizontal">
-                                   <TextBlock
-                                         Margin="5"
-                                         Text="{Binding Path=Event.City}"/>
-                                   <TextBlock
-                                         Margin="5"
-                                         Text="{Binding Path=Event.Date}"/>
-                              </StackPanel>
+                              <TextBlock
+                                    Text="{Binding Path=Event.RawName}"/>
                          </DataTemplate>
                     </ListBox.ItemTemplate>
                </ListBox>
