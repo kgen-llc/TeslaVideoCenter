@@ -39,7 +39,7 @@
        Grid.Column="0"
        Grid.Row="1">
       <ListBox
-         Items="{Binding Event.Videos}"
+         Items="{Binding Videos}"
          Name="Videos">
         <ListBox.ItemTemplate>
           <DataTemplate>
@@ -78,7 +78,7 @@
            IsVisible="{Binding Path=!SelectedItem, ElementName=Videos}"/>
         <v:VideoView
            IsVisible="{Binding Path=!!SelectedItem, ElementName=Videos}"
-           DataContext="{Binding Path=SelectedItem.FilePath, ElementName=Videos}"/>
+           DataContext="{Binding Path=SelectedItem.Video.FilePath, ElementName=Videos}"/>
       </Panel>
     </styles:Card>
   </Grid>

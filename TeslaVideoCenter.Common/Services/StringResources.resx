@@ -177,8 +177,8 @@
     <value>Part: {0}</value>
     <comment/>
   </data>
-  <data name="PartsCount" xml:space="preserve">
-    <value>{0} Parts</value>
+  <data name="VideoNameWithPartsCount" xml:space="preserve">
+    <value>{0} - {1} Parts</value>
     <comment/>
   </data>
   <data name="HintNoSelectedVideo" xml:space="preserve">
