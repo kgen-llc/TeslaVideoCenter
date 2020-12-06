@@ -31,7 +31,16 @@
                <RowDefinition
                      Height="40"/>
           </Grid.RowDefinitions>
-          <styles:Card
+            <styles:Card IsVisible="{Binding !EventsViewModel.Events.Count}"
+                Margin="5"
+                Padding="10"
+                Grid.Column="0">
+               <v:HintText
+                     Text="{behaviors:TranslateExtension HintNoEventsExists}"
+                    />
+          </styles:Card>
+
+          <styles:Card IsVisible="{Binding EventsViewModel.Events.Count}"
                 Margin="5"
                 Padding="10"
                 Grid.Column="0">

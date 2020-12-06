@@ -191,4 +191,10 @@ Please select one from the list on the left.</value>
 Please select one from the list on the left.</value>
     <comment/>
   </data>
+ <data name="HintNoEventsExists" xml:space="preserve">
+    <value>There is current no events.
+You will need to import some.</value>
+    <comment/>
+  </data>
+  
 </root>
