@@ -91,10 +91,25 @@
          <Panel>
             <v:HintText
                 Text="{behaviors:TranslateExtension HintNoSelectedVideo}"
-                IsVisible="{Binding Path=!SelectedItem, ElementName=Videos}"/>
+                IsVisible="{Binding Path=SelectedItem, ElementName=Videos, Converter={x:Static ObjectConverters.IsNull}}"/>
+            <v:HintText
+                Text="{behaviors:TranslateExtension HintCorruptedVideo}"
+                IsVisible="{Binding Path=SelectedItem.Video.IsCorrupted, ElementName=Videos}"/>
             <v:VideoView
-                IsVisible="{Binding Path=!!SelectedItem, ElementName=Videos}"
-                DataContext="{Binding Path=SelectedItem.Video.FilePath, ElementName=Videos}"/>
+                DataContext="{Binding Path=SelectedItem.Video.FilePath, ElementName=Videos}">
+               <v:VideoView.IsVisible>
+                  <MultiBinding
+                      Converter="{x:Static BoolConverters.And}">
+                     <Binding
+                         Path="SelectedItem"
+                         Converter="{x:Static ObjectConverters.IsNotNull}"
+                         ElementName="Videos"/>
+                     <Binding
+                         Path="SelectedItem.IsNotCorrupted"
+                         ElementName="Videos"/>
+                  </MultiBinding>
+               </v:VideoView.IsVisible>
+            </v:VideoView>
          </Panel>
       </styles:Card>
    </Grid>

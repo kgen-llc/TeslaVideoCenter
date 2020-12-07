@@ -13,6 +13,10 @@ namespace TeslaVideoCenter.Common.ViewModels
 
             this.stringResources = new StringResources();
 
+            this.isNotCorruptedHelper = this.Video
+                .WhenAnyValue(_ => _.IsCorrupted, _ => !_)
+                .ToProperty(this, nameof(this.IsNotCorrupted));
+
             this.nameHelper = this.Video
                 .WhenAnyValue(_ => _.RawName, _ => _.FilePath.Length, calculateName)
                 .ToProperty(this, nameof(this.Name));
@@ -28,6 +32,10 @@ namespace TeslaVideoCenter.Common.ViewModels
         private readonly ObservableAsPropertyHelper<string> nameHelper;
 
         public string Name {get => nameHelper.Value; }
+
+         private readonly ObservableAsPropertyHelper<bool> isNotCorruptedHelper;
+
+        public bool IsNotCorrupted {get => isNotCorruptedHelper.Value; }
     }
 
 }

@@ -56,10 +56,10 @@
           </styles:Card>
           <styles:Card
                 Margin="5"
-                Grid.Column="1">
+                Grid.Column="1" IsVisible="{Binding Path=SelectedItem, ElementName=Events, Converter={x:Static ObjectConverters.IsNull}}">
                <v:HintText
                      Text="{behaviors:TranslateExtension HintNoSelectedEvent}"
-                     IsVisible="{Binding Path=!SelectedItem, ElementName=Events}"/>
+                     />
           </styles:Card>
           <v:EventView
                 IsVisible="{Binding Path=!!SelectedItem,ElementName=Events}"

@@ -15,13 +15,20 @@ namespace TeslaVideoCenter.Common.Services
 
             foreach (var file in filePath)
             {
-                var info = await FFProbe.AnalyseAsync(file);
-                if (info == null)
+                try
+                {
+                    var info = await FFProbe.AnalyseAsync(file);
+                    if (info == null)
+                    {
+                        return null;
+                    }
+
+                    totalTime += info.Duration;
+                }
+                catch
                 {
                     return null;
                 }
-
-                totalTime += info.Duration;
             }
 
             return totalTime;

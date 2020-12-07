@@ -18,9 +18,8 @@ namespace TeslaVideoCenter.Models
             this.RawName = name;
 
             this.IsAlreadyProcess = false;
-
-            this.TotalTime = VideoManager.GetAccumulatedTime(this.FilePath);
-            this.IsCorrupted = this.TotalTime == null;
+            this.IsCorrupted = true;
+            this.Initialized = Initializing();
         }
 
         public Video(string name, string filePath)
@@ -29,6 +28,17 @@ namespace TeslaVideoCenter.Models
             this.FilePath = new[] { filePath };
 
             this.IsAlreadyProcess = true;
+            this.IsCorrupted = true;
+            this.Initialized = Initializing();
+        }
+
+        private  Task Initializing() {
+            return Task.Run( async () => {
+                this.TotalTime = await VideoManager.GetAccumulatedTimeAsync(this.FilePath);
+                this.RaisePropertyChanged(nameof(this.TotalTime));
+                this.IsCorrupted = this.TotalTime == null;
+                this.RaisePropertyChanged(nameof(this.IsCorrupted));
+            });
         }
 
         public string[] FilePath { get; }
@@ -36,8 +46,9 @@ namespace TeslaVideoCenter.Models
         public string RawName { get; }
 
         public bool IsAlreadyProcess { get; }
-        public TimeSpan? TotalTime { get; }
-        public bool IsCorrupted { get; }
+        public TimeSpan? TotalTime { get; private set; }
+        public bool IsCorrupted { get; private set; }
 
+        public Task Initialized {get;}
     }
 }

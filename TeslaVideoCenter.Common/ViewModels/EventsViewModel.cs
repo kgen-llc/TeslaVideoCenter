@@ -12,8 +12,8 @@ namespace TeslaVideoCenter.Common.ViewModels
         private readonly ReadOnlyObservableCollection<EventViewModel> events;
 
         public EventsViewModel(EventsRepository repository) {
-            repository.Events.ToObservableChangeSet()
-                .Transform(model => new EventViewModel(model))
+            repository.Events.ToObservableChangeSet()   
+                .Transform(@event => new EventViewModel(@event))
                 // No need to use the .ObserveOn() operator here, as
                 // ObservableCollectionExtended is single-threaded.
                 .Bind(out this.events)

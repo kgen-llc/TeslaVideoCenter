@@ -9,10 +9,6 @@ namespace TeslaVideoCenter.Common.ViewModels
     public class MainWindowViewModel : ViewModelBase
     {
         private readonly EventsRepository repository;
-        private Event currentEvent;
-
-        private Video currentVideo;
-
         public MainWindowViewModel()
         {
             var document = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -29,9 +25,5 @@ namespace TeslaVideoCenter.Common.ViewModels
         }
 
         public EventsViewModel EventsViewModel { get; }
-
-        public Event CurrentEvent { get => this.currentEvent; set => this.RaiseAndSetIfChanged(ref this.currentEvent, value); }
-        public Video CurrentVideo { get => this.currentVideo; set => this.RaiseAndSetIfChanged(ref this.currentVideo, value); }
-
     }
 }
