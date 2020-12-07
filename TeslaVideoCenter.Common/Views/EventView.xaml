@@ -1,85 +1,101 @@
 <UserControl
-   xmlns="https://github.com/avaloniaui"
-   xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-   xmlns:v="clr-namespace:TeslaVideoCenter.Common.Views"
-   xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
-   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-   mc:Ignorable="d"
-   d:DesignWidth="800"
-   d:DesignHeight="450"
-   x:Class="TeslaVideoCenter.Common.Views.EventView">
-  <Grid>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition
-         Width="250"/>
-      <ColumnDefinition
-         Width="*"/>
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
-      <RowDefinition
-         Height="200"/>
-      <RowDefinition
-         Height="1*"/>
-      <RowDefinition
-         Height="Auto"/>
-    </Grid.RowDefinitions>
-    <styles:Card
-       Margin="5"
-       Padding="10"
-       Grid.Column="0"
-       Grid.Row="0"
-       Grid.ColumnSpan="2">
-      <v:EventInfoView/>
-    </styles:Card>
-    <styles:Card
-       Margin="5"
-       Padding="10"
-       Grid.Column="0"
-       Grid.Row="1">
-      <ListBox
-         Items="{Binding Videos}"
-         Name="Videos">
-        <ListBox.ItemTemplate>
-          <DataTemplate>
-            <Border>
-              <TextBlock
-                 Text="{Binding Name}"/>
-            </Border>
-          </DataTemplate>
-        </ListBox.ItemTemplate>
-      </ListBox>
-    </styles:Card>
-    <styles:Card
-       Margin="5"
-       Padding="10"
-       Grid.Column="0"
-       Grid.Row="2">
-      <StackPanel
-         Orientation="Vertical">
-        <Button
-           Command="{Binding GenerateOverallVideoCommand}"
-           Content="{behaviors:TranslateExtension GenerateEventVideo}"/>
-        <ProgressBar
-           Minimum="0"
-           Maximum="100"
-           Value="{Binding Progress}"/>
-      </StackPanel>
-    </styles:Card>
-    <styles:Card
-       Margin="5"
-       Padding="10"
-       Grid.Column="1"
-       Grid.Row="1"
-       Grid.RowSpan="2">
-      <Panel>
-         <v:HintText Text="{behaviors:TranslateExtension HintNoSelectedVideo}" 
-           IsVisible="{Binding Path=!SelectedItem, ElementName=Videos}"/>
-        <v:VideoView
-           IsVisible="{Binding Path=!!SelectedItem, ElementName=Videos}"
-           DataContext="{Binding Path=SelectedItem.Video.FilePath, ElementName=Videos}"/>
-      </Panel>
-    </styles:Card>
-  </Grid>
+    xmlns="https://github.com/avaloniaui"
+    xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+    xmlns:v="clr-namespace:TeslaVideoCenter.Common.Views"
+    xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    x:Class="TeslaVideoCenter.Common.Views.EventView">
+   <Grid>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition
+             Width="250"/>
+         <ColumnDefinition
+             Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition
+             Height="200"/>
+         <RowDefinition
+             Height="1*"/>
+         <RowDefinition
+             Height="Auto"/>
+      </Grid.RowDefinitions>
+      <styles:Card
+          Margin="5"
+          Padding="10"
+          Grid.Column="0"
+          Grid.Row="0"
+          Grid.ColumnSpan="2">
+         <v:EventInfoView/>
+      </styles:Card>
+      <styles:Card
+          Margin="5"
+          Padding="10"
+          Grid.Column="0"
+          Grid.Row="1">
+         <ListBox
+             Items="{Binding Videos}"
+             Name="Videos">
+            <ListBox.ItemTemplate>
+               <DataTemplate>
+                  <Border>
+                     <TextBlock
+                         Text="{Binding Name}">
+                        <TextBlock.Styles>
+                           <Style
+                               Selector="TextBlock.Corrupted">
+                              <Setter
+                                  Property="Foreground"
+                                  Value="{DynamicResource ValidationErrorColor}"/>
+                           </Style>
+                        </TextBlock.Styles>
+                        <i:Interaction.Behaviors>
+                           <behaviors:AddClassBehavior
+                               Class="Corrupted"
+                               IsEnabled="{Binding Video.IsCorrupted}"/>
+                        </i:Interaction.Behaviors>
+                     </TextBlock>
+                  </Border>
+               </DataTemplate>
+            </ListBox.ItemTemplate>
+         </ListBox>
+      </styles:Card>
+      <styles:Card
+          Margin="5"
+          Padding="10"
+          Grid.Column="0"
+          Grid.Row="2">
+         <StackPanel
+             Orientation="Vertical">
+            <Button
+                Command="{Binding GenerateOverallVideoCommand}"
+                Content="{behaviors:TranslateExtension GenerateEventVideo}"/>
+            <ProgressBar
+                Minimum="0"
+                Maximum="100"
+                Value="{Binding Progress}"/>
+         </StackPanel>
+      </styles:Card>
+      <styles:Card
+          Margin="5"
+          Padding="10"
+          Grid.Column="1"
+          Grid.Row="1"
+          Grid.RowSpan="2">
+         <Panel>
+            <v:HintText
+                Text="{behaviors:TranslateExtension HintNoSelectedVideo}"
+                IsVisible="{Binding Path=!SelectedItem, ElementName=Videos}"/>
+            <v:VideoView
+                IsVisible="{Binding Path=!!SelectedItem, ElementName=Videos}"
+                DataContext="{Binding Path=SelectedItem.Video.FilePath, ElementName=Videos}"/>
+         </Panel>
+      </styles:Card>
+   </Grid>
 </UserControl>

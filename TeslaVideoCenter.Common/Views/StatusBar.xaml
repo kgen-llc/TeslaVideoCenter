@@ -1,35 +1,74 @@
-<UserControl xmlns="https://github.com/avaloniaui" 
-xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors" xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:v="clr-namespace:TeslaVideoCenter.Common.Views" xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="TeslaVideoCenter.Common.Views.StatusBar">
+<UserControl
+     xmlns="https://github.com/avaloniaui"
+     xmlns:behaviors="clr-namespace:TeslaVideoCenter.Common.Views.Behaviors"
+     xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+     xmlns:v="clr-namespace:TeslaVideoCenter.Common.Views"
+     xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     mc:Ignorable="d"
+     d:DesignWidth="800"
+     d:DesignHeight="450"
+     x:Class="TeslaVideoCenter.Common.Views.StatusBar">
     <UserControl.Styles>
-        <Style Selector="TextBlock">
-            <Setter Property="VerticalAlignment" Value="Center"/>
+        <Style
+             Selector="TextBlock">
+            <Setter
+                 Property="VerticalAlignment"
+                 Value="Center"/>
         </Style>
-        <Style Selector="TextBlock.LinkButton">
-            <Setter Property="Foreground" Value="Blue"/>
+        <Style
+             Selector="TextBlock.LinkButton">
+            <Setter
+                 Property="Foreground"
+                 Value="Blue"/>
         </Style>
     </UserControl.Styles>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition
+                 Width="Auto"/>
+            <ColumnDefinition
+                 Width="10"/>
+            <ColumnDefinition
+                 Width="*"/>
+            <ColumnDefinition
+                 Width="10"/>
+            <ColumnDefinition
+                 Width="Auto"/>
         </Grid.ColumnDefinitions>
-      
-        <TextBlock Text="{behaviors:TranslateExtension HelpMe}" Margin="5,0,5,0" Classes="LinkButton">
+        <TextBlock
+             Text="{behaviors:TranslateExtension HelpMe}"
+             Margin="5,0,5,0"
+             Classes="LinkButton">
             <i:Interaction.Behaviors>
-                <behaviors:CommandOnClickBehavior Command="{Binding Path=HelpMeCommand}"/>
+                <behaviors:CommandOnClickBehavior
+                     Command="{Binding Path=HelpMeCommand}"/>
             </i:Interaction.Behaviors>
             <TextBlock.TextDecorations>
                 <TextDecorationCollection>
-                    <TextDecoration Location="Underline" StrokeThicknessUnit="Pixel" StrokeThickness="1" StrokeOffset="3" StrokeOffsetUnit="Pixel" Stroke="Blue"></TextDecoration>
+                    <TextDecoration
+                         Location="Underline"
+                         StrokeThicknessUnit="Pixel"
+                         StrokeThickness="1"
+                         StrokeOffset="3"
+                         StrokeOffsetUnit="Pixel"
+                         Stroke="Blue"></TextDecoration>
                 </TextDecorationCollection>
             </TextBlock.TextDecorations>
         </TextBlock>
-        <TextBlock Grid.Column="1" Text="‖"/>
-        <TextBlock Grid.Column="2" Text="{Binding Info}"/>
-        <TextBlock Grid.Column="3" Text="‖"/>
-        <TextBlock Grid.Column="4" Text="{Binding Version}"/>
+        <TextBlock
+             Grid.Column="1"
+             Text="‖"/>
+        <TextBlock
+             Grid.Column="2"
+             Text="{Binding Info}"/>
+        <TextBlock
+             Grid.Column="3"
+             Text="‖"/>
+        <TextBlock
+             Grid.Column="4"
+             Text="{Binding Version}"/>
     </Grid>
 </UserControl>
