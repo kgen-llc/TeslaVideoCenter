@@ -24,7 +24,7 @@ namespace TeslaVideoCenter.Common.Services.VideoLayout
                 @event.Videos.First(_ => _.RawName == "right_repeater")
             };
 
-            await processing.CreateOutput(progress,@event.Videos, Path.Combine(@event.VideosDirectory, VideoManager.FullEventVideo));
+            await processing.CreateOutput(progress,videos, Path.Combine(@event.VideosDirectory, VideoManager.FullEventVideo));
         }
 
         protected override void ApplyOption(IReadOnlyCollection<Video> videos, FFMpegArgumentOptions options)
