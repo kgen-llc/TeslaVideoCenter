@@ -7,9 +7,10 @@ This is :
 - and fun for me to play with AVALONIA.
 
 Currently tested on :
-- Mac x64 !
+- MacOS x64
+- Windows 10
 
-# External source coming from ..
+# External source coming from 
  - LibVCLSharp.Avalonia: https://github.com/donandren/vlcsharpavalonia
  - part of the icon: https://thenounproject.com/term/tesla-model-3/487299/
  - FFMepg: https://ffmpeg.org/
