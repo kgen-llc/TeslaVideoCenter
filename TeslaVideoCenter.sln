@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibVLCSharp.Avalonia", "LibVLCSharp.Avalonia\LibVLCSharp.Avalonia.csproj", "{AC59B453-E6FF-49A5-AD40-26BE0CDACECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaVideoCenter.Common", "TeslaVideoCenter.Common\TeslaVideoCenter.Common.csproj", "{CD5B4A0A-8D8B-4DB6-A982-DCF18005CA6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaVideoCenter.Mac", "TeslaVideoCenter.Mac\TeslaVideoCenter.Mac.csproj", "{DE1F05A0-84E0-4446-8A6D-50672E15F1CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaVideoCenter.Windows", "TeslaVideoCenter.Windows\TeslaVideoCenter.Windows.csproj", "{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC59B453-E6FF-49A5-AD40-26BE0CDACECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC59B453-E6FF-49A5-AD40-26BE0CDACECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC59B453-E6FF-49A5-AD40-26BE0CDACECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC59B453-E6FF-49A5-AD40-26BE0CDACECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5B4A0A-8D8B-4DB6-A982-DCF18005CA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5B4A0A-8D8B-4DB6-A982-DCF18005CA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5B4A0A-8D8B-4DB6-A982-DCF18005CA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5B4A0A-8D8B-4DB6-A982-DCF18005CA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1F05A0-84E0-4446-8A6D-50672E15F1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1F05A0-84E0-4446-8A6D-50672E15F1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1F05A0-84E0-4446-8A6D-50672E15F1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1F05A0-84E0-4446-8A6D-50672E15F1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9648F656-4019-4738-B596-0913145324C6}
+	EndGlobalSection
+EndGlobal
