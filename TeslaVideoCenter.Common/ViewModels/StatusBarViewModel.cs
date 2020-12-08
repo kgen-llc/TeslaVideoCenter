@@ -11,6 +11,7 @@ namespace TeslaVideoCenter.Common.ViewModels
 {
     public class StatusBarViewModel : ViewModelBase
     {
+        private const string RepositoryUrl = "kgen-llc/TeslaVideoCenter";
 
         private List<string> infos;
         private object infoTimer;
@@ -26,7 +27,7 @@ namespace TeslaVideoCenter.Common.ViewModels
 
             this.GetInfoContent();
 
-            this.HelpMeCommand = ReactiveCommand.Create(() => OpenUrl.WithSystemBrowser("https://github.com/fforjan/TeslaVideoCenter/wiki"));
+            this.HelpMeCommand = ReactiveCommand.Create(() => OpenUrl.WithSystemBrowser($"https://github.com/{RepositoryUrl}/wiki"));
         }
 
         public void GetInfoContent(){
@@ -34,7 +35,7 @@ namespace TeslaVideoCenter.Common.ViewModels
             {
                 try
                 {
-                    var content = await OpenUrl.AndReturnContent($"https://raw.githubusercontent.com/wiki/fforjan/TeslaVideoCenter/Announcement-{this.Version}.md");
+                    var content = await OpenUrl.AndReturnContent($"https://raw.githubusercontent.com/wiki/{RepositoryUrl}/Announcement-{this.Version}.md");
 
                     this.infos.AddRange(content.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(_ => _.Trim()));
                     this.infoTimer = Observable
