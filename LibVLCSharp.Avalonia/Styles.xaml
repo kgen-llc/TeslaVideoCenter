@@ -21,7 +21,8 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Panel Background="{TemplateBinding Background}">
-          <local:NativeVideoPresenter Name="PART_NativeHost" Content="{TemplateBinding Content}" />
+          <local:NativeVideoPresenter Name="PART_NativeHost" />
+          <ContentControl Content="{TemplateBinding Content}" />
         </Panel>
       </ControlTemplate>
     </Setter>
