@@ -19,7 +19,7 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview6" />
     <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.0-preview6" />
-    <PackageReference Include="FFMpegCore" Version="3.2.1" />
+    <PackageReference Include="FFMpegCore" Version="3.2.2" />
     <PackageReference Include="Material.Avalonia" Version="0.10.4" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
