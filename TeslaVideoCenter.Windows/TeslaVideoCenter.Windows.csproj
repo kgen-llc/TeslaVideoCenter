@@ -5,6 +5,7 @@
     <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
     <ApplicationIcon>..\TeslaVideoCenter.Common\Assets\TeslaVideoCenter.ico</ApplicationIcon>
     <VlcWindowsX86Enabled>false</VlcWindowsX86Enabled>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Models\" />
