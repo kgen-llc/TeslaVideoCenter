@@ -15,10 +15,6 @@ jobs:
   build-windows:
     runs-on: windows-latest
 
-    defaults:
-      run:
-        working-directory: TeslaVideoCenter.Windows
-
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
@@ -31,13 +27,19 @@ jobs:
         run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
-      - name: Publish Windows
-        run: dotnet publish --runtime win10-x64 --configuration ${{ env.CONFIGURATION }}
-      - name: Upload Windows App
-        uses: actions/upload-artifact@v2
-        with:
-          name: Windows-App
-          path: TeslaVideoCenter.Windows/bin/${{ env.CONFIGURATION }}/${{ env.FRAMEWORK}}/win10-x64/publish/
+      - name: Create MSIX
+        # Build the Windows Application Packaging project
+      - name: Build the Windows Application Packaging Project (wapproj) 
+        run: msbuild /p:Platform=${{ env.TargetPlatform }} /p:Configuration=${{ env.Configuration }} /p:UapAppxPackageBuildMode=${{ env.BuildMode }} /p:AppxBundle=${{ env.AppxBundle }}
+        env:
+          AppxBundle: Never
+          BuildMode: SideLoadOnly
+          TargetPlatform: x64
+      #- name: Upload Windows App
+      #  uses: actions/upload-artifact@v2
+      #  with:
+      #    name: Windows-App
+      #    path: TeslaVideoCenter.Windows/bin/${{ env.CONFIGURATION }}/${{ env.FRAMEWORK}}/win10-x64/publish/
 
   macos-bundle:
     runs-on: macOS-latest
