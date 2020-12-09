@@ -9,6 +9,7 @@ on:
 env:
   CONFIGURATION: Release
   FRAMEWORK: net5.0
+  DOTNETVERSION: '5.0.100'
 
 jobs:
   build-windows:
@@ -23,7 +24,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.100'
+          dotnet-version: $DOTNETVERSION
       - name: Install dependencies
         run: dotnet restore
       - name: Build
@@ -50,7 +51,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.100'
+        dotnet-version: $DOTNETVERSION
     - name: Install dependencies
       run: dotnet restore
     - name: Build
@@ -61,7 +62,7 @@ jobs:
       run: dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-x64 -property:Configuration=$CONFIGURATION
     - name: Archive MacOS App
       run: tar -cf TeslaVideoCenter.tar 'Tesla Video Center.app'
-      working-directory: TeslaVideoCenter.Mac/bin/$CONFIGURATION/$$FRAMEWORK/osx-x64/publish/
+      working-directory: TeslaVideoCenter.Mac/bin/$CONFIGURATION/$FRAMEWORK/osx-x64/publish/
     - name: Upload MacOS App
       uses: actions/upload-artifact@v2
       with:
