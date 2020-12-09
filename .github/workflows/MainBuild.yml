@@ -9,7 +9,6 @@ on:
 env:
   CONFIGURATION: Release
   FRAMEWORK: net5.0
-  DOTNETVERSION: '5.0.100'
 
 jobs:
   build-windows:
@@ -24,7 +23,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: $env:DOTNETVERSION
+          dotnet-version: '5.0.100'
       - name: Install dependencies
         run: dotnet restore
       - name: Build
@@ -51,7 +50,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: $env:DOTNETVERSION
+        dotnet-version: '5.0.100'
     - name: Install dependencies
       run: dotnet restore
     - name: Build
