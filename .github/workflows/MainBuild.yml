@@ -9,7 +9,7 @@ on:
 env:
   CONFIGURATION: Release
   FRAMEWORK: net5.0
-  DOTNETVERSION: 5.0.100
+  DOTNETVERSION: '5.0.100'
 
 jobs:
   build-windows:
