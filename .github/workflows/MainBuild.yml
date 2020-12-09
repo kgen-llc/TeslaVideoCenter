@@ -27,6 +27,14 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
         with:
           vs-version: '[16.8,16.9)'
+          
+      
+      - name: Update manifest version
+        run: |
+          [xml]$directoryProps = get-content "Directory.Build.Props"
+          [xml]$manifest = get-content "TeslaVideoCenter.Windows.Package/Package.appxmanifest"
+          $manifest.Package.Identity.Version = $directoryProps.Project.PropertyGroup.VersionPrefix
+          $manifest.save("TeslaVideoCenter.Windows.Package/Package.appxmanifest")
       - name: Install dependencies
         run: msbuild /t:Restore /p:Configuration=${{ env.Configuration }} /p:RuntimeIdentifier=win10-x64
       #- name: Build
