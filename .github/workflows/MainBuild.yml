@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 
-env.
+env:
   CONFIGURATION: Release
   FRAMEWORK: net5.0
   DOTNETVERSION: '5.0.100'
