@@ -28,16 +28,16 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build --configuration $CONFIGURATION --no-restore
+        run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
       - name: Publish Windows
-        run: dotnet publish --runtime win10-x64 --configuration $CONFIGURATION
+        run: dotnet publish --runtime win10-x64 --configuration ${{ env.CONFIGURATION }}
       - name: Upload Windows App
         uses: actions/upload-artifact@v2
         with:
           name: Windows-App
-          path: TeslaVideoCenter.Windows/bin/$CONFIGURATION/$FRAMEWORK/win10-x64/publish/
+          path: TeslaVideoCenter.Windows/bin/${{ env.CONFIGURATION }}/${{ env.FRAMEWORK}}/win10-x64/publish/
 
   macos-bundle:
     runs-on: macOS-latest
@@ -55,16 +55,16 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration $CONFIGURATION --no-restore
+      run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Publish MacOS
-      run: dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-x64 -property:Configuration=${{ env.Configuration }}
+      run: dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-x64 -property:Configuration=${{ env.CONFIGURATION }}
     - name: Archive MacOS App
       run: tar -cf TeslaVideoCenter.tar 'Tesla Video Center.app'
-      working-directory: TeslaVideoCenter.Mac/bin/$CONFIGURATION/$CONFIGURATION/osx-x64/publish/
+      working-directory: TeslaVideoCenter.Mac/bin/${{ env.CONFIGURATION }}/${{ env.FRAMEWORK}}/osx-x64/publish/
     - name: Upload MacOS App
       uses: actions/upload-artifact@v2
       with:
         name: MacOS-App
-        path: 'TeslaVideoCenter.Mac/bin/$CONFIGURATION/$FRAMEWORK/osx-x64/publish/TeslaVideoCenter.tar'
+        path: 'TeslaVideoCenter.Mac/bin/${{ env.CONFIGURATION }}/${{ env.FRAMEWORK}}/osx-x64/publish/TeslaVideoCenter.tar'
