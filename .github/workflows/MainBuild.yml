@@ -40,11 +40,11 @@ jobs:
           AppxBundle: Never
           BuildMode: SideLoadOnly
           TargetPlatform: x64
-      #- name: Upload Windows App
-      #  uses: actions/upload-artifact@v2
-      #  with:
-      #    name: Windows-App
-      #    path: TeslaVideoCenter.Windows/bin/${{ env.CONFIGURATION }}/${{ env.FRAMEWORK}}/win10-x64/publish/
+      - name: Upload Windows App
+        uses: actions/upload-artifact@v2
+        with:
+          name: Windows-App
+          path: TeslaVideoCenter.Windows.Package/AppPackages/
 
   macos-bundle:
     runs-on: macOS-latest
