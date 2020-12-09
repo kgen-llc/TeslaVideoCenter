@@ -33,7 +33,7 @@ jobs:
         run: |
           [xml]$directoryProps = get-content "Directory.Build.Props"
           [xml]$manifest = get-content "TeslaVideoCenter.Windows.Package/Package.appxmanifest"
-          $manifest.Package.Identity.Version = $directoryProps.Project.PropertyGroup.VersionPrefix
+          $manifest.Package.Identity.Version = $directoryProps.Project.PropertyGroup.VersionPrefix +  (Get-Date).DayOfYear + $env:GITHUB_RUN_NUMBER
           $manifest.save("TeslaVideoCenter.Windows.Package/Package.appxmanifest")
       - name: Install dependencies
         run: msbuild /t:Restore /p:Configuration=${{ env.Configuration }} /p:RuntimeIdentifier=win10-x64
