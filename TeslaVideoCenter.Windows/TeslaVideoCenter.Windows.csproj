@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
     <ApplicationIcon>..\TeslaVideoCenter.Common\Assets\TeslaVideoCenter.ico</ApplicationIcon>
     <VlcWindowsX86Enabled>false</VlcWindowsX86Enabled>
