@@ -8,12 +8,12 @@
 
   <Identity
     Name="e1ff0add-ea6a-4651-8a98-ee9220785775"
-    Publisher="CN=ISYS36005"
+    Publisher="CN=Frederic Forjan @ KGen LLC"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>TeslaVideoCenter.Windows.Package</DisplayName>
-    <PublisherDisplayName>ISYS36005</PublisherDisplayName>
+    <DisplayName>Tesla Video Center</DisplayName>
+    <PublisherDisplayName>Frederic Forjan @ KGen LLC</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
