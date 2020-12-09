@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: msbuild /t:Restore /p:Configuration=${{ env.Configuration }} /p:RuntimeIdentifier=win10-x64
       #- name: Build
-        run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
-      #- name: Test
+      #  run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
+      - name: Test
         run: dotnet test --no-restore --verbosity normal
         # Build the Windows Application Packaging project
       - name: Build the Windows Application Packaging Project (wapproj) 
