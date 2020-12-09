@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <TargetFramework>netstandard2.0</TargetFramework>
+   <TargetFramework>net5.0</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;osx-x64</RuntimeIdentifiers>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>

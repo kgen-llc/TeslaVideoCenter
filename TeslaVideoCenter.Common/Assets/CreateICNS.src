@@ -13,3 +13,12 @@ convert TeslaVideoCenter.iconset/icon_16x16.png TeslaVideoCenter.iconset/icon_32
 iconutil -c icns TeslaVideoCenter.iconset
 mv -f TeslaVideoCenter.icns ../../TeslaVideoCenter.Mac/Assets/TeslaVideoCenter.icns
 rm -R TeslaVideoCenter.iconset
+
+# for Windows Package
+sips -z 50 50     TeslaVideoCenter.png --out ../../TeslaVideoCenter.Windows.Package/Images/StoreLogo.png
+sips -z 48 48     TeslaVideoCenter.png --out ../../TeslaVideoCenter.Windows.Package/Images/LockScreenLogo.scale-200.png
+sips -z 24 24     TeslaVideoCenter.png --out ../../TeslaVideoCenter.Windows.Package/Images/Square44x44Logo.targetsize-24_altform-unplated.png
+sips -z 88 88     TeslaVideoCenter.png --out ../../TeslaVideoCenter.Windows.Package/Images/Square44x44Logo.scale-200.png
+sips -z 300 300   TeslaVideoCenter.png --out ../../TeslaVideoCenter.Windows.Package/Images/Square150x150Logo.scale-200.png
+sips -z 600 1240  TeslaVideoCenter-Wide.png --out ../../TeslaVideoCenter.Windows.Package/Images/SplashScreen.scale-200.png
+sips -z 300 620   TeslaVideoCenter-Wide.png --out ../../TeslaVideoCenter.Windows.Package/Images/Wide310x150Logo.scale-200.png

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.809.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibVLCSharp.Avalonia", "LibVLCSharp.Avalonia\LibVLCSharp.Avalonia.csproj", "{AC59B453-E6FF-49A5-AD40-26BE0CDACECC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibVLCSharp.Avalonia", "LibVLCSharp.Avalonia\LibVLCSharp.Avalonia.csproj", "{AC59B453-E6FF-49A5-AD40-26BE0CDACECC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaVideoCenter.Common", "TeslaVideoCenter.Common\TeslaVideoCenter.Common.csproj", "{CD5B4A0A-8D8B-4DB6-A982-DCF18005CA6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeslaVideoCenter.Common", "TeslaVideoCenter.Common\TeslaVideoCenter.Common.csproj", "{CD5B4A0A-8D8B-4DB6-A982-DCF18005CA6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaVideoCenter.Mac", "TeslaVideoCenter.Mac\TeslaVideoCenter.Mac.csproj", "{DE1F05A0-84E0-4446-8A6D-50672E15F1CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeslaVideoCenter.Mac", "TeslaVideoCenter.Mac\TeslaVideoCenter.Mac.csproj", "{DE1F05A0-84E0-4446-8A6D-50672E15F1CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaVideoCenter.Windows", "TeslaVideoCenter.Windows\TeslaVideoCenter.Windows.csproj", "{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeslaVideoCenter.Windows", "TeslaVideoCenter.Windows\TeslaVideoCenter.Windows.csproj", "{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}"
+EndProject
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "TeslaVideoCenter.Windows.Package", "TeslaVideoCenter.Windows.Package\TeslaVideoCenter.Windows.Package.wapproj", "{A81C1BA2-7A95-4F9B-BB77-B09C7EE89394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9781C6E5-FA1B-4CAF-99B1-2EE18C01E7DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81C1BA2-7A95-4F9B-BB77-B09C7EE89394}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A81C1BA2-7A95-4F9B-BB77-B09C7EE89394}.Debug|x64.Build.0 = Debug|Any CPU
+		{A81C1BA2-7A95-4F9B-BB77-B09C7EE89394}.Release|x64.ActiveCfg = Release|Any CPU
+		{A81C1BA2-7A95-4F9B-BB77-B09C7EE89394}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

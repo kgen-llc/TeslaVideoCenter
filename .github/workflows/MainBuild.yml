@@ -9,35 +9,50 @@ on:
 env:
   CONFIGURATION: Release
   FRAMEWORK: net5.0
-  DOTNETVERSION: '5.0.100'
+  DOTNETVERSION: '5.0.x'
+  Actions_Allow_Unsecure_Commands: true # Allows AddPAth and SetEnv commands
 
 jobs:
   build-windows:
     runs-on: windows-latest
 
-    defaults:
-      run:
-        working-directory: TeslaVideoCenter.Windows
-
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v1.7.2
         with:
           dotnet-version: ${{env.DOTNETVERSION}}
+        # Add  MsBuild to the PATH: https://github.com/microsoft/setup-msbuild
+      - name: Setup MSBuild.exe
+        uses: microsoft/setup-msbuild@v1.0.2
+        with:
+          vs-version: '[16.8,16.9)'
+          
+      
+      - name: Update manifest version
+        run: |
+          [xml]$directoryProps = get-content "Directory.Build.Props"
+          [xml]$manifest = get-content "TeslaVideoCenter.Windows.Package/Package.appxmanifest"
+          $manifest.Package.Identity.Version = $directoryProps.Project.PropertyGroup.VersionPrefix + "." + (Get-Date).DayOfYear + "." + $env:GITHUB_RUN_NUMBER
+          $manifest.save("TeslaVideoCenter.Windows.Package/Package.appxmanifest")
       - name: Install dependencies
-        run: dotnet restore
-      - name: Build
-        run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
-      - name: Test
-        run: dotnet test --no-restore --verbosity normal
-      - name: Publish Windows
-        run: dotnet publish --runtime win10-x64 --configuration ${{ env.CONFIGURATION }}
+        run: msbuild /t:Restore /p:Configuration=${{ env.Configuration }} /p:RuntimeIdentifier=win10-x64
+      #- name: Build
+      #  run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
+      #- name: Test
+      #  run: dotnet test --no-restore --verbosity normal
+        # Build the Windows Application Packaging project
+      - name: Build the Windows Application Packaging Project (wapproj) 
+        run: msbuild TeslaVideoCenter.Windows.Package/TeslaVideoCenter.Windows.Package.wapproj /p:Platform=${{ env.TargetPlatform }} /p:Configuration=${{ env.Configuration }} /p:UapAppxPackageBuildMode=${{ env.BuildMode }} /p:AppxBundle=${{ env.AppxBundle }}
+        env:
+          AppxBundle: Never
+          BuildMode: SideLoadOnly
+          TargetPlatform: x64
       - name: Upload Windows App
         uses: actions/upload-artifact@v2
         with:
           name: Windows-App
-          path: TeslaVideoCenter.Windows/bin/${{ env.CONFIGURATION }}/${{ env.FRAMEWORK}}/win10-x64/publish/
+          path: TeslaVideoCenter.Windows.Package/AppPackages/
 
   macos-bundle:
     runs-on: macOS-latest
