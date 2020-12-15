@@ -1,5 +1,5 @@
-// Copyright (c) The Avalonia Project. All rights reserved.
-// Licensed under the MIT license. See licence.md file in the project root for full license information.
+// Copyright (c) Frederic Forjan
+// Licensed under MIT License
 
 using System;
 using Avalonia.Controls;
