@@ -1,3 +1,6 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.InteropServices;

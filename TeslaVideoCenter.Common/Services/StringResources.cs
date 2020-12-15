@@ -1,6 +1,8 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using System.Reflection;
 using System.Resources;
-using Splat;
 
 namespace TeslaVideoCenter.Common.Services
 {

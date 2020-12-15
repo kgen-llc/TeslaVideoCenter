@@ -1,5 +1,6 @@
 <Project>
  <PropertyGroup>
+    <Copyright>Copyright 2020 &#169; The AvaloniaUI Project</Copyright>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningLevel>4</WarningLevel>
     <VersionPrefix>2020.1</VersionPrefix>

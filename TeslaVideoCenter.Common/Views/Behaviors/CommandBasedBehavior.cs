@@ -1,3 +1,6 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Xaml.Interactivity;

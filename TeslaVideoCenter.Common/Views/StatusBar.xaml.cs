@@ -1,3 +1,6 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using TeslaVideoCenter.Common.ViewModels;

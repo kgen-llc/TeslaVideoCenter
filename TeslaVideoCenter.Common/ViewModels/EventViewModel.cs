@@ -1,3 +1,6 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;

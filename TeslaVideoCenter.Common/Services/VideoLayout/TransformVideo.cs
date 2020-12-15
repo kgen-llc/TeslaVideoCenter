@@ -1,16 +1,18 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using FFMpegCore;
-using FFMpegCore.Arguments;
 using TeslaVideoCenter.Models;
 
 
 namespace TeslaVideoCenter.Common.Services.VideoLayout
 {
-     public abstract class TransformVideo : IDisposable
+    public abstract class TransformVideo : IDisposable
     {
         private string workingFolder;
         protected TransformVideo()

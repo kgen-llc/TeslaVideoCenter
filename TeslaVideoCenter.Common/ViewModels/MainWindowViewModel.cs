@@ -1,8 +1,9 @@
-﻿using System;
+﻿// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
+using System;
 using System.IO;
-using ReactiveUI;
 using TeslaVideoCenter.Models;
-using System.Reflection;
 
 namespace TeslaVideoCenter.Common.ViewModels
 {

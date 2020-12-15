@@ -1,3 +1,6 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using System.IO;
 using System.Linq;
 using DynamicData.Binding;

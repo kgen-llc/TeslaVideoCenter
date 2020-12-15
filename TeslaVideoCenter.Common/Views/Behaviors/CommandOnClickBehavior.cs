@@ -1,8 +1,10 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using Avalonia.Input;
 
 namespace TeslaVideoCenter.Common.Views.Behaviors
 {
-
     public class CommandOnClickBehavior : CommandBasedBehavior<InputElement>
 	{
 		protected override void OnAttached()
