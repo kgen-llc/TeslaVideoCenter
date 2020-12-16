@@ -19,7 +19,7 @@ namespace TeslaVideoCenter.Common.Services.VideoLayout
     /// </summary>
     public class ClassicLayout : TransformVideo
     {
-        private static readonly ClassicLayoutArgument classicLayoutArgument = new ClassicLayoutArgument()
+        private static readonly ClassicLayoutArgument classicLayoutArgument = new ClassicLayoutArgument();
         
         ///<summary>
         /// Process the event and generate the full event video
