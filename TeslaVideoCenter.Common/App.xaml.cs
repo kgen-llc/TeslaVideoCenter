@@ -1,3 +1,6 @@
+// Copyright (c) Frederic Forjan 
+// Licensed under MIT License
+
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
