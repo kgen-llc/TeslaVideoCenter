@@ -15,18 +15,17 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview6" />
-    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.0-preview6" />
+    <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.0-rc1" />
     <PackageReference Include="FFMpegCore" Version="3.2.4" />
-    <PackageReference Include="Material.Avalonia" Version="0.10.4" />
+    <PackageReference Include="Material.Avalonia" Version="0.10.5-rc1" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
-    <PackageReference Include="System.Reactive" Version="5.0.0" />
     <ProjectReference Include="..\LibVLCSharp.Avalonia\LibVLCSharp.Avalonia.csproj" />
   </ItemGroup>
 </Project>
