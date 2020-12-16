@@ -17,9 +17,6 @@ Currently tested on :
 # How to use it:
 Check our wiki : https://github.com/kgen-llc/TeslaVideoCenter/wiki
 
-![Tesla Cam in Finder](README.assets/finder.png)
-
-
 # Extra  Technical info
 ![Number of line](https://img.shields.io/tokei/lines/github/kgen-llc/TeslaVideoCenter)
 ![Repository Size](https://img.shields.io/github/repo-size/kgen-llc/TeslaVideoCenter)
