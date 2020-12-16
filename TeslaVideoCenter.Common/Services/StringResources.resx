@@ -182,15 +182,18 @@
     <comment/>
   </data>
   <data name="HintNoSelectedVideo" xml:space="preserve">
-    <value>No video is currently selected.Please select one from the list on the left.</value>
+    <value>No video is currently selected.
+Please select one from the list on the left.</value>
     <comment/>
   </data>
   <data name="HintNoSelectedEvent" xml:space="preserve">
-    <value>No event is currently selected.Please select one from the list on the left.</value>
+    <value>No event is currently selected.
+Please select one from the list on the left.</value>
     <comment/>
   </data>
   <data name="HintNoEventsExists" xml:space="preserve">
-    <value>There is current no events.You will need to import some.</value>
+    <value>There is currently no events.
+You will need to import some.</value>
     <comment/>
   </data>
   <data name="HintCorruptedVideo" xml:space="preserve">
