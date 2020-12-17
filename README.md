@@ -15,11 +15,7 @@ Currently tested on :
  - FFMepg: https://ffmpeg.org/
 
 # How to use it:
-Copy all your files from your USB drive to a TeslaCam folder within your document folder.
-For example on my Mac :
-
-![Tesla Cam in Finder](README.assets/finder.png)
-
+Check our wiki : https://github.com/kgen-llc/TeslaVideoCenter/wiki
 
 # Extra  Technical info
 ![Number of line](https://img.shields.io/tokei/lines/github/kgen-llc/TeslaVideoCenter)

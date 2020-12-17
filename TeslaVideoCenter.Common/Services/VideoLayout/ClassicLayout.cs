@@ -12,8 +12,18 @@ using TeslaVideoCenter.Models;
 
 namespace TeslaVideoCenter.Common.Services.VideoLayout
 {
+    /// <summary>     
+    /// this is a classic Layout amd will combine all videos in one of size 960x480 using the layout :
+    /// [blank][front][blank]
+    /// [left_repeater ][back ][right_repeater  ]
+    /// </summary>
     public class ClassicLayout : TransformVideo
     {
+        private static readonly ClassicLayoutArgument classicLayoutArgument = new ClassicLayoutArgument();
+        
+        ///<summary>
+        /// Process the event and generate the full event video
+        ///</summary>
         public static async Task Process(Action<double> progress, Event @event)
         {
             using var processing = new ClassicLayout();
@@ -32,7 +42,7 @@ namespace TeslaVideoCenter.Common.Services.VideoLayout
 
         protected override void ApplyOption(IReadOnlyCollection<Video> videos, FFMpegArgumentOptions options)
         {
-            options.WithArgument(new ClassicLayoutArgument());
+            options.WithArgument(classicLayoutArgument);
         }
 
         /// <summary>
