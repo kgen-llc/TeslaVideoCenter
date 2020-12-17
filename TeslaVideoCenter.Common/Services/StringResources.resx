@@ -200,4 +200,8 @@ You will need to import some.</value>
     <value>Video is corrupted. It cannot be visualized.</value>
     <comment/>
   </data>
+  <data name="EventInformationWatermark" xml:space="preserve">
+    <value>Add your own information regarding the event.</value>
+    <comment/>
+  </data>
 </root>

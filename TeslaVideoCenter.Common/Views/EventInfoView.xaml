@@ -31,6 +31,6 @@
     <TextBlock Text="{Binding Event.City}" Grid.Row="1" Grid.Column="3"/>
 
     <TextBlock Text="{behaviors:TranslateExtension EventInformation}" Grid.Row="2" Grid.Column="0"/>
-    <TextBox  Text="{Binding Event.Information}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+    <TextBox  Text="{Binding Event.Information}" Watermark="{behaviors:TranslateExtension EventInformationWatermark}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
   </Grid>
 </UserControl>
