@@ -8,7 +8,7 @@
 
   <Identity
     Name="e1ff0add-ea6a-4651-8a98-ee9220785775"
-    Publisher="C=US,ST=CA,O=KGEN LLC/emailAddress=tech@kgen-llc.com"
+    Publisher="/C=US/O=KGEN-LLC"
     Version="1.0.0.0" />
 
   <Properties>
