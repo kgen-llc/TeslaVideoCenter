@@ -27,7 +27,11 @@
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxBundle>Always</AppxBundle>
     <UapAppxPackageBuildMode>SideLoadOnly</UapAppxPackageBuildMode>
-    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+
+    <!--  Signing - by default, it is a self cert-->
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateKeyFile>$(MSBuildProjectDirectory)\cert.pfx</PackageCertificateKeyFile>
+    
     <EntryPointProjectUniqueName>..\TeslaVideoCenter.Windows\TeslaVideoCenter.Windows.csproj</EntryPointProjectUniqueName>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
