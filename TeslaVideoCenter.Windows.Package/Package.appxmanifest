@@ -8,7 +8,7 @@
 
   <Identity
     Name="e1ff0add-ea6a-4651-8a98-ee9220785775"
-    Publisher="C=US, O=KGEN-LLC"
+    Publisher="C=US, O=KGEN-LLC, CN=TeslaVideoCenter"
     Version="1.0.0.0" />
 
   <Properties>
