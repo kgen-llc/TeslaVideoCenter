@@ -41,7 +41,7 @@ jobs:
       #  run: dotnet test --no-restore --verbosity normal
         # Build the Windows Application Packaging project
       - name: Build the Windows Application Packaging Project (wapproj) 
-        run: msbuild TeslaVideoCenter.Windows.Package/TeslaVideoCenter.Windows.Package.wapproj /p:Platform=${{ env.TargetPlatform }} /p:Configuration=${{ env.Configuration }} /p:UapAppxPackageBuildMode=${{ env.BuildMode }} /p:AppxBundle=${{ env.AppxBundle }}
+        run: msbuild TeslaVideoCenter.Windows.Package/TeslaVideoCenter.Windows.Package.wapproj /p:Platform=${{ env.TargetPlatform }} /p:Configuration=${{ env.Configuration }} /p:UapAppxPackageBuildMode=${{ env.BuildMode }} /p:AppxBundle=${{ env.AppxBundle }} /p:PackageCertificatePassword=${{ secrets.PFXPASSWORD}}
         env:
           AppxBundle: Never
           BuildMode: SideLoadOnly

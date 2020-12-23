@@ -31,7 +31,6 @@
     <!--  Signing - by default, it is a self cert-->
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <PackageCertificateKeyFile>$(MSBuildProjectDirectory)\cert.pfx</PackageCertificateKeyFile>
-    <PackageCertificatePassword>TeslaVideoCenter</PackageCertificatePassword>
     
     <EntryPointProjectUniqueName>..\TeslaVideoCenter.Windows\TeslaVideoCenter.Windows.csproj</EntryPointProjectUniqueName>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
