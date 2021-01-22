@@ -18,7 +18,7 @@
     <PackageReference Include="Avalonia" Version="0.10.0-rc2" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc2" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-rc2" />
-    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.0-rc2" />
     <PackageReference Include="FFMpegCore" Version="3.3.0" />
     <PackageReference Include="Material.Avalonia" Version="1.0.1" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
