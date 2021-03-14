@@ -56,8 +56,6 @@ namespace TeslaVideoCenter.Common.Services
                 {
                     return null;
                 }
-
-
             }
 
             return totalTime;

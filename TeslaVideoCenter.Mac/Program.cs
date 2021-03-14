@@ -19,7 +19,7 @@ namespace TeslaVideoCenter.Mac
                 .UsePlatformDetect()
                 .UseReactiveUI()
                 .UseVLCSharp()
-                .UseFFMpeg(new FFMpegOptions { RootDirectory = "." })
+                .UseFFMpeg(new FFMpegCore.FFOptions { BinaryFolder = "." })
                 .LogToTrace();
     }
 }
