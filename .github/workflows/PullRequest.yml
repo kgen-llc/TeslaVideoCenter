@@ -12,6 +12,7 @@ env:
 
 jobs:
   build-windows:
+    if: false
     runs-on: windows-latest
 
     steps:
@@ -22,10 +23,7 @@ jobs:
           dotnet-version: ${{env.DOTNETVERSION}}
         # Add  MsBuild to the PATH: https://github.com/microsoft/setup-msbuild
       - name: Setup MSBuild.exe
-        uses: microsoft/setup-msbuild@v1.0.2
-        with:
-          vs-version: '[16.8,16.9)'
-          
+        uses: microsoft/setup-msbuild@v1.0.2          
       
       - name: Update manifest version
         run: |
