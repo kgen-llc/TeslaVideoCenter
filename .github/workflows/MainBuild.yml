@@ -6,8 +6,8 @@ on:
 
 env:
   CONFIGURATION: Release
-  FRAMEWORK: net5.0
-  DOTNETVERSION: '5.0.x'
+  FRAMEWORK: net6.0
+  DOTNETVERSION: '6.0.x'
   Actions_Allow_Unsecure_Commands: true # Allows AddPAth and SetEnv commands
 
 jobs:

@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/TeslaVideoCenter.Mac/bin/Debug/net5.0/TeslaVideoCenter.Mac.dll",
+            "program": "${workspaceFolder}/TeslaVideoCenter.Mac/bin/Debug/net6.0/TeslaVideoCenter.Mac.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/TeslaVideoCenter.Mac/bin/Debug/net5.0/",
+            "cwd": "${workspaceFolder}/TeslaVideoCenter.Mac/bin/Debug/net6.0/",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
