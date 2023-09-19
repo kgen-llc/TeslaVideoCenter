@@ -11,3 +11,7 @@ updates:
       interval: "daily"
     commit-message:
       prefix: ":arrow_up:"
+    groups:
+      avalonia:
+         patterns:
+          - "avalonia*"
