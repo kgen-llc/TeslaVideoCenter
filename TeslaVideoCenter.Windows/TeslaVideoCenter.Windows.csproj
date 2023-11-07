@@ -18,7 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="fforjan.staticffmpeg.windows" Version="4.3.1" />
-    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.18" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
 
     <ProjectReference Include="..\TeslaVideoCenter.Common\TeslaVideoCenter.Common.csproj" />
   </ItemGroup>
