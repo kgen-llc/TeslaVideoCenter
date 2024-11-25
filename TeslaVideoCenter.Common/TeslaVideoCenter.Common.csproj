@@ -15,12 +15,12 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.21" />
+    <PackageReference Include="Avalonia" Version="11.1.0" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.21" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.21" />
     <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.19" />
     <PackageReference Include="FFMpegCore" Version="5.1.0" />
-    <PackageReference Include="Material.Avalonia" Version="2.5.1" />
+    <PackageReference Include="Material.Avalonia" Version="3.7.4" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
